@@ -5,6 +5,8 @@
 from Crypto.Cipher import ChaCha20
 import secrets  # Used to seed LCG
 
+
+
 class LCG:
     def __init__(self, multiplier: int = 1103515245, increment: int = 12345, modulus: int = 2147483648, seed: int = 0):
         """ Initializes an LCG. Defaults to values used in the C rand function. """
@@ -24,6 +26,8 @@ class LCG:
     def get_modulus(self):
         return self.modulus
 
+
+
 def encrypt(message: str, key: bytes, nonce: bytes):
     """ 
     Encrypts a message using ChaCha20
@@ -40,6 +44,8 @@ def encrypt(message: str, key: bytes, nonce: bytes):
     cipher = ChaCha20.new(key=key, nonce=nonce)
     ciphertext = cipher.encrypt(message.encode())
     return ciphertext
+
+
 
 def generate_key(lcg: LCG, length: int):
     """
@@ -68,30 +74,3 @@ def generate_key(lcg: LCG, length: int):
         result += keys[i]
 
     return result
-
-
-def example_data(message: str):
-    """
-    Uses the C rand LCG to generate a 256 bit key and encrypt a message with ChaCha20.
-
-    Returns:
-        dict: Contains "plaintext", "ciphertext", "key", and "nonce" in hexadecimal representation.
-    """
-
-    lcg = LCG()
-    lcg.srand(secrets.randbits(32))   # Seed the LCG with a good PRNG
-
-    key = generate_key(lcg, 256)
-    print(len(key))
-    nonce = (secrets.randbits(64).to_bytes(8, "big"))
-    ciphertext = encrypt(message, key, nonce)
-
-    result = {"plaintext": message, "ciphertext": ciphertext, "key": key, "nonce": nonce}
-
-    return result
-
-
-
-if __name__ == "__main__":
-    # print(example("Hello!"))
-    print("balls")

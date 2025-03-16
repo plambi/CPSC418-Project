@@ -7,6 +7,8 @@ from multiprocessing import Pool, cpu_count
 
 WORKER_CONSTANTS = None
 
+
+
 def generate_decryption_key(seed: int):
     """
     Generates a 256 bit key for decryption using the LCG. This can use the LCG object and generate_key() method 
@@ -19,11 +21,11 @@ def generate_decryption_key(seed: int):
         bytes: Key
     """
     keys = []
-    state = ((1103515245 * seed) + 12345) % 2147483648
+    state = ((1103515245 * seed) + 12345) % 2147483648      # Call of rand
     keys.append(state.to_bytes(4, "big"))
 
     for _ in range(1, 8):
-        state = ((1103515245 * seed) + 12345) % 2147483648
+        state = ((1103515245 * state) + 12345) % 2147483648
         keys.append(state.to_bytes(4, "big"))
 
     result = b''
@@ -31,6 +33,7 @@ def generate_decryption_key(seed: int):
         result += keys[i]
 
     return result
+
 
 
 def initialize_worker(constants):
@@ -43,11 +46,10 @@ def initialize_worker(constants):
     global WORKER_CONSTANTS
     WORKER_CONSTANTS = constants
 
-def try_seed(seed):
-    """
-    Worker function. Generates a 256 bit key using seed and attempts decryption with it.
 
-    """
+
+def try_seed(seed):
+    """ Worker function. Generates a 256 bit key using seed and attempts decryption with it. Returns None if key failed, seed otherwise. """
     key = generate_decryption_key(seed)
     cipher = ChaCha20.new(key=key, nonce=WORKER_CONSTANTS["nonce"])
     decrypted_ciphertext = cipher.decrypt(WORKER_CONSTANTS["ciphertext"])
@@ -56,13 +58,16 @@ def try_seed(seed):
         return seed
     return None
 
-def brute_force(constants, processes=None):
+
+
+def brute_force(constants, processes=None, max_key_length=32):
     """
     Brute forces 32 bit LCG generated key encrypted with ChaCha20.
 
     Args:
         constants (dict): Dictionary containing "plaintext": bytes, "ciphertext": bytes , "nonce": bytes
-        processes (int): Number of cpus to use. Reccomended is 1 less than your core count. Defaults to ((# of Logical Processors) / 2 - 1). 
+        processes (int): Number of cpus to use. Reccomended is 1 less than your core count. Defaults to ((# of Logical Processors) / 2 - 1).
+        max_key_length (int): The power of two representing the number of keys that will be checked. Keys = 2^max_key_length
     
     """
 
@@ -70,8 +75,7 @@ def brute_force(constants, processes=None):
         processes = int(cpu_count() / 2 - 1)
 
     with Pool(processes=processes, initializer=initialize_worker, initargs=(constants, )) as pool:
-        results = pool.map(try_seed, range(2**32))
+        results = pool.map(try_seed, range(2**max_key_length))
         seed = [s for s in results if s is not None]
 
         return seed
-
