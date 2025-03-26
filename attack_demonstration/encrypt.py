@@ -17,7 +17,7 @@ class LCG:
 
     def srand(self, seed: int):
         """ Seed the LCG """
-        self.state = seed
+        self.state = seed % self.modulus
 
     def rand(self):
         self.state = ((self.multiplier * self.state) + self.increment) % self.modulus

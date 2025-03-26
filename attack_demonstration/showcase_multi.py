@@ -7,17 +7,17 @@ import secrets
 import time
 
 from encrypt import LCG, generate_key, encrypt
-from attack import brute_force
+from attack_multi import brute_force
 
 
 
-def example(plaintext: str, bits: int = 256, cpu_count: int = None):
+def example(plaintext: str, bits: int = 32, cpu_count: int = None):
     """
     Example showcasing LCG weakness.
 
     Args:
         message (str): Message to be encrypted
-        bits (int): Range of LCG initial seeding. 1 <= bits <= 32. Defaults to 256.
+        bits (int): Range of LCG initial seeding (in bits). Defaults to 32.
 
     """
     KEY_LENGTH = 256
@@ -32,7 +32,7 @@ def example(plaintext: str, bits: int = 256, cpu_count: int = None):
     constants = {"plaintext": plaintext.encode(), "ciphertext": ciphertext, "nonce": nonce}
 
     start_time = time.time()
-    results = brute_force(constants=constants, processes=7, max_key_length=bits)     # Perform brute force
+    results = brute_force(constants=constants, processes=cpu_count, max_key_length=bits)     # Perform brute force
     end_time = time.time()
     run_time = end_time - start_time
 
@@ -58,5 +58,5 @@ if __name__ == "__main__":
     """
     message = "Hello There"         # Any message should work
     lcg_range = 12                  # The range of the intial LCG seed. Its maximum is 2^32 and that would be used in practice. But for testing faster set anything you like
-    max_cores = None                # The number of CPU cores the simulation will use. If None it uses all cores. 
+    max_cores = 7                   # The number of CPU cores the simulation will use. If None it uses all cores. 
     example(message, lcg_range, max_cores)
