@@ -1,0 +1,147 @@
+BBS PRNG Test Results
+================================================================================
+
+=== rand_bbs_nist_testdata.txt ===
+1. Frequency Test: (0.7368708664727055, True)
+2. Block Frequency Test: (0.2174331461414934, True)
+3. Runs Test: (0.20618945732949634, True)
+4. Longest Run of Ones: (0.5440083450987514, True)
+5. Binary Matrix Rank: (0.29448650910182755, True)
+6. Spectral Test: (0.0651099417759383, True)
+7. Non-overlapping Template: (0.2431412622711191, True)
+8. Overlapping Template: (0.9485884940343111, True)
+9. Universal Test: (0.6495087014324896, True)
+10. Linear Complexity: (0.10146991280008005, True)
+11. Serial Test: ((0.02074936115690388, True), (0.4589712521643265, True))
+12. Approximate Entropy: (0.650726243971463, True)
+13. Cumulative Sums (Forward): (0.8048829809089528, True)
+14. Cumulative Sums (Reverse): (0.9946269545090014, True)
+
+15. Random Excursions:
+	State -4: P-value = 0.6659768265580206, Pass
+	State -3: P-value = 0.038795832485189904, Pass
+	State -2: P-value = 0.06263249950394727, Pass
+	State -1: P-value = 0.053137806546218705, Pass
+	State +1: P-value = 0.3626571697560766, Pass
+	State +2: P-value = 0.39853349635961305, Pass
+	State +3: P-value = 0.2936603697816335, Pass
+	State +4: P-value = 0.4724112132416858, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.3406545881699736, Pass
+	State -8.0: P-value = 0.3067631197754176, Pass
+	State -7.0: P-value = 0.31358750968776505, Pass
+	State -6.0: P-value = 0.3827472438969992, Pass
+	State -5.0: P-value = 0.5746227719444388, Pass
+	State -4.0: P-value = 0.7801489257899294, Pass
+	State -3.0: P-value = 0.9578574641913319, Pass
+	State -2.0: P-value = 0.46334063830720995, Pass
+	State -1.0: P-value = 0.17420007154827155, Pass
+	State +1.0: P-value = 0.5949223122986285, Pass
+	State +2.0: P-value = 0.9863928844719954, Pass
+	State +3.0: P-value = 0.3832629918680457, Pass
+	State +4.0: P-value = 0.20707661475580763, Pass
+	State +5.0: P-value = 0.1680414254658713, Pass
+	State +6.0: P-value = 0.0626768697755349, Pass
+	State +7.0: P-value = 0.020417714760196628, Pass
+	State +8.0: P-value = 0.008893761674649035, Fail
+	State +9.0: P-value = 0.003087188326656113, Fail
+
+================================================================================
+
+=== time_bbs_nist_testdata.txt ===
+1. Frequency Test: (0.7444243551287965, True)
+2. Block Frequency Test: (0.6919189764561819, True)
+3. Runs Test: (0.5404674024465626, True)
+4. Longest Run of Ones: (0.13284648210036706, True)
+5. Binary Matrix Rank: (0.1565933462679829, True)
+6. Spectral Test: (0.4798148028041245, True)
+7. Non-overlapping Template: (0.5751737421038108, True)
+8. Overlapping Template: (0.8872668119478174, True)
+9. Universal Test: (0.7342837979096959, True)
+10. Linear Complexity: (0.35589062950133843, True)
+11. Serial Test: ((0.5700191745833647, True), (0.6231071996725873, True))
+12. Approximate Entropy: (0.5653193019292898, True)
+13. Cumulative Sums (Forward): (0.3890627099080903, True)
+14. Cumulative Sums (Reverse): (0.6559394728421595, True)
+
+15. Random Excursions:
+	State -4: P-value = 0.7870873289907343, Pass
+	State -3: P-value = 0.7700543706153568, Pass
+	State -2: P-value = 0.3652696874716507, Pass
+	State -1: P-value = 0.9204709533033837, Pass
+	State +1: P-value = 0.4827973178705338, Pass
+	State +2: P-value = 0.39275556883947355, Pass
+	State +3: P-value = 0.2925822779573444, Pass
+	State +4: P-value = 0.4926404657625062, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.352496344050796, Pass
+	State -8.0: P-value = 0.09392415258575193, Pass
+	State -7.0: P-value = 0.0496617500510733, Pass
+	State -6.0: P-value = 0.07536823868947248, Pass
+	State -5.0: P-value = 0.3020282281097769, Pass
+	State -4.0: P-value = 1.0, Pass
+	State -3.0: P-value = 0.6923792683898183, Pass
+	State -2.0: P-value = 0.609523380350829, Pass
+	State -1.0: P-value = 0.882783191152826, Pass
+	State +1.0: P-value = 0.3020282281097768, Pass
+	State +2.0: P-value = 0.3490764476262922, Pass
+	State +3.0: P-value = 0.5528851028695372, Pass
+	State +4.0: P-value = 0.4687823469006126, Pass
+	State +5.0: P-value = 0.3504075567454721, Pass
+	State +6.0: P-value = 0.3739447986092539, Pass
+	State +7.0: P-value = 0.4134366645270522, Pass
+	State +8.0: P-value = 0.44642595729257584, Pass
+	State +9.0: P-value = 0.452677651785383, Pass
+
+================================================================================
+
+=== urand_bbs_nist_testdata.txt ===
+1. Frequency Test: (0.3919977794453764, True)
+2. Block Frequency Test: (0.7080891173949704, True)
+3. Runs Test: (0.9515720247926301, True)
+4. Longest Run of Ones: (0.5227780340644936, True)
+5. Binary Matrix Rank: (0.08420520634403662, True)
+6. Spectral Test: (0.5326204949302686, True)
+7. Non-overlapping Template: (0.26509102306224064, True)
+8. Overlapping Template: (0.527620699612557, True)
+9. Universal Test: (0.8578030389878823, True)
+10. Linear Complexity: (0.44820904932437633, True)
+11. Serial Test: ((0.9352526778635465, True), (0.8775322017796614, True))
+12. Approximate Entropy: (0.7830581962376255, True)
+13. Cumulative Sums (Forward): (0.763575502195142, True)
+14. Cumulative Sums (Reverse): (0.3539295305132808, True)
+
+15. Random Excursions:
+	State -4: P-value = 0.39598805817778543, Pass
+	State -3: P-value = 0.6107952140567693, Pass
+	State -2: P-value = 0.7732429384589491, Pass
+	State -1: P-value = 0.9282190700180828, Pass
+	State +1: P-value = 0.10313726771746475, Pass
+	State +2: P-value = 0.5581617340593732, Pass
+	State +3: P-value = 0.37823399617463255, Pass
+	State +4: P-value = 0.07308265225909555, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.8392152893714626, Pass
+	State -8.0: P-value = 0.8883436028934624, Pass
+	State -7.0: P-value = 0.9291282017440767, Pass
+	State -6.0: P-value = 0.7878911323678017, Pass
+	State -5.0: P-value = 0.7134996770643508, Pass
+	State -4.0: P-value = 0.5515118851481404, Pass
+	State -3.0: P-value = 0.5619871366524127, Pass
+	State -2.0: P-value = 0.6992050537720084, Pass
+	State -1.0: P-value = 0.7590403197856571, Pass
+	State +1.0: P-value = 0.3797291615126549, Pass
+	State +2.0: P-value = 0.23036051570312877, Pass
+	State +3.0: P-value = 0.2216550818421137, Pass
+	State +4.0: P-value = 0.21949149238140564, Pass
+	State +5.0: P-value = 0.18841939407100117, Pass
+	State +6.0: P-value = 0.13340857495880712, Pass
+	State +7.0: P-value = 0.09404707214087255, Pass
+	State +8.0: P-value = 0.13706638456346537, Pass
+	State +9.0: P-value = 0.220896717644526, Pass
+
+================================================================================
+

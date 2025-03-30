@@ -52,7 +52,7 @@ class BBS:
         True if n is prime
         False if n is composite
     """
-    def is_prime(self, n, k=5):
+    def is_prime(self, n, k=20):
         # Error check if n us less than or equal to 1, which cannot be a prime number
         if n <= 1:
             return False
@@ -99,13 +99,14 @@ class BBS:
                 seed = int(time.time()*1_000_000) % self.n # Current time in microseconds
             elif seed_type == "rand":
                 libc = ctypes.CDLL("libc.so.6")  # Load C library
+                libc.srand(libc.time(0))  # Properly seed rand()
                 seed = (libc.rand() << 32) | libc.rand()
                 seed %= self.n
             elif seed_type == "urandom":
-                seed = int.from_bytes(os.urandom(8), byteorder='big') % self.n
+                seed = int.from_bytes(os.urandom(16), byteorder='big') % self.n
             else:
                 raise ValueError("Invalid seed type. Choose 'time', 'rand', or 'urandom'.")
-            if 1 < seed < self.n and math.gcd(seed, self.n) == 1:
+            if 1 < seed < self.n and math.gcd(seed, self.n) == 1: #Ensure seed is coprime with n
                 return seed
 
     """
