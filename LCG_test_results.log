@@ -1,0 +1,120 @@
+LCG PRNG Test Results
+================================================================================
+
+=== time_lcg_nist_testdata.txt ===
+1. Frequency Test: (6.955878452327047e-223, False)
+2. Block Frequency Test: (0.37163064402299023, True)
+3. Runs Test: (0.0, False)
+4. Longest Run of Ones: (0.000524432893380879, False)
+5. Binary Matrix Rank: (0.0, False)
+6. Spectral Test: (0.0, False)
+7. Non-overlapping Template: (3.051687008452671e-06, False)
+8. Overlapping Template: (4.399778721066491e-17, False)
+9. Universal Test: (0.02046578016052404, True)
+10. Linear Complexity: (0.6017827802822091, True)
+11. Serial Test: ((1.2972108974763744e-22, False), (1.0, True))
+12. Approximate Entropy: (0.0, False)
+13. Cumulative Sums (Forward): (1.8371469873275835e-223, False)
+14. Cumulative Sums (Reverse): (3.47793922616293e-223, False)
+
+15. Random Excursions:
+	State -4: P-value = 1.138085401980086e-05, Fail
+	State -3: P-value = 0.005324337409375595, Fail
+	State -2: P-value = 0.005177344251965914, Fail
+	State -1: P-value = 0.01560941610026691, Pass
+	State +1: P-value = 0.8491450360846096, Pass
+	State +2: P-value = 0.984747879018509, Pass
+	State +3: P-value = 0.9953295932358704, Pass
+	State +4: P-value = 0.9979031595107858, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.46685427082272546, Pass
+	State -8.0: P-value = 1.0, Pass
+	State -7.0: P-value = 0.8897069355331012, Pass
+	State -6.0: P-value = 0.8801684549067255, Pass
+	State -5.0: P-value = 0.8676323347781927, Pass
+	State -4.0: P-value = 0.8501067391385259, Pass
+	State -3.0: P-value = 0.8230632737581215, Pass
+	State -2.0: P-value = 0.7728299926844475, Pass
+	State -1.0: P-value = 0.31731050786291415, Pass
+
+================================================================================
+
+=== urand_lcg_nist_testdata.txt ===
+1. Frequency Test: (0.0, False)
+2. Block Frequency Test: (0.0, False)
+3. Runs Test: (0.0, False)
+4. Longest Run of Ones: (3.8587904563546795e-11, False)
+5. Binary Matrix Rank: (0.0, False)
+6. Spectral Test: (0.0, False)
+7. Non-overlapping Template: (0.0, False)
+8. Overlapping Template: (3.892375259224601e-40, False)
+9. Universal Test: (0.0, False)
+10. Linear Complexity: (0.503779584176721, True)
+11. Serial Test: ((0.0, False), (1.0, True))
+12. Approximate Entropy: (0.0, False)
+13. Cumulative Sums (Forward): (0.0, False)
+14. Cumulative Sums (Reverse): (0.0, False)
+
+15. Random Excursions:
+	State -4: P-value = 2.9111549198896303e-12, Fail
+	State -3: P-value = 1.5046506621757205e-06, Fail
+	State -2: P-value = 0.010362337915786429, Pass
+	State -1: P-value = 0.6999858358786276, Pass
+	State +1: P-value = 0.9625657732472964, Pass
+	State +2: P-value = 0.9969687632568645, Pass
+	State +3: P-value = 0.9991138612111875, Pass
+	State +4: P-value = 0.9996100613790039, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 1.0, Pass
+	State -8.0: P-value = 1.0, Pass
+	State -7.0: P-value = 1.0, Pass
+	State -6.0: P-value = 1.0, Pass
+	State -5.0: P-value = 1.0, Pass
+	State -4.0: P-value = 1.0, Pass
+	State -3.0: P-value = 1.0, Pass
+	State -2.0: P-value = 1.0, Pass
+	State -1.0: P-value = 1.0, Pass
+
+================================================================================
+
+=== zero_lcg_nist_testdata.txt ===
+1. Frequency Test: (0.0, False)
+2. Block Frequency Test: (0.0, False)
+3. Runs Test: (0.0, False)
+4. Longest Run of Ones: (3.8587904563546795e-11, False)
+5. Binary Matrix Rank: (0.0, False)
+6. Spectral Test: (0.0, False)
+7. Non-overlapping Template: (0.0, False)
+8. Overlapping Template: (3.892375259224601e-40, False)
+9. Universal Test: (0.0, False)
+10. Linear Complexity: (0.503779584176721, True)
+11. Serial Test: ((0.0, False), (1.0, True))
+12. Approximate Entropy: (0.0, False)
+13. Cumulative Sums (Forward): (0.0, False)
+14. Cumulative Sums (Reverse): (0.0, False)
+
+15. Random Excursions:
+	State -4: P-value = 2.9111549198896303e-12, Fail
+	State -3: P-value = 1.5046506621757205e-06, Fail
+	State -2: P-value = 0.010362337915786429, Pass
+	State -1: P-value = 0.6999858358786276, Pass
+	State +1: P-value = 0.9625657732472964, Pass
+	State +2: P-value = 0.9969687632568645, Pass
+	State +3: P-value = 0.9991138612111875, Pass
+	State +4: P-value = 0.9996100613790039, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 1.0, Pass
+	State -8.0: P-value = 1.0, Pass
+	State -7.0: P-value = 1.0, Pass
+	State -6.0: P-value = 1.0, Pass
+	State -5.0: P-value = 1.0, Pass
+	State -4.0: P-value = 1.0, Pass
+	State -3.0: P-value = 1.0, Pass
+	State -2.0: P-value = 1.0, Pass
+	State -1.0: P-value = 1.0, Pass
+
+================================================================================
+
