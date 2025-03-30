@@ -21,15 +21,12 @@ class LCG:
         return self.seed
 
     def generate_bits(self, bitcount):
-        bits = []
-        # Generate the bits in chunks of 32
-        for _ in range(bitcount // 32):
-            value = self.gen()  # Generate a 32-bit value
+        bits = ""
+        while len(bits) < bitcount:
+            num = self.gen()
+            bits += bin(num)[2:] # Remove '0b'
 
-            # Extract each of the 32 bits from the 32-bit value
-            for i in range(31, -1, -1):
-                bit = (value >> i) & 1
-                bits.append(str(bit))
+        bits = bits[:bitcount]
         return bits
 
 if __name__ == "__main__":
@@ -38,16 +35,16 @@ if __name__ == "__main__":
     bits = lcg.generate_bits(1_000_000)
     # Save the bits to a file
     with open("time_lcg_nist_testdata.txt", "w") as f:
-        f.write("".join(bits))
+        f.write(bits)
 
-    lcg.generate_seed("urand")
+    lcg.generate_seed("urandom")
     bits = lcg.generate_bits(1_000_000)
     # Save the bits to a file
     with open("urand_lcg_nist_testdata.txt", "w") as f:
-        f.write("".join(bits))
+        f.write(bits)
 
     lcg.generate_seed("none")
     bits = lcg.generate_bits(1_000_000)
     # Save the bits to a file
     with open("zero_lcg_nist_testdata.txt", "w") as f:
-        f.write("".join(bits))
+        f.write(bits)
