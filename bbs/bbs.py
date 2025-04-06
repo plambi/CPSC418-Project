@@ -16,7 +16,7 @@ import os
 """BBS PRNG with 3 seed options: time, rand(), /dev/urandom"""
 class BBS:
     def __init__(self, seed_type="time", bits=1024):
-        #1034 bits for NIST testing
+        #1024 bits for NIST testing
         self.p = self.generate_large_prime(bits)
         self.q = self.generate_large_prime(bits)
         self.n = self.p * self.q
