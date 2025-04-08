@@ -16,7 +16,7 @@ def example(plaintext: str, seed_bits: int = 32, thread_count: int = None):
 
     Args:
         plaintext (str): The known plaintext
-        seed_bits (int): rand supports seeds up to 2^32 but for testing purposes you can limit it to a different power of 2
+        seed_bits (int): rand supports seeds up to 2^31 but for testing purposes you can limit it to a different power of 2
         thread_count (int): Number of threads to be used during brute forcing. Reccommended is CPU count.
     
     """
