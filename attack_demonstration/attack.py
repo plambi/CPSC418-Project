@@ -1,5 +1,5 @@
-# Group 7 - Austin Doucette, Michelle Cheung, Dayee Lee
-# CPSC 418 - Project
+# Group 7 - Austin Doucette
+# CPSC 418 - Explorations of Pseudo Random Number Generation
 # April 2025
 
 import multiprocessing
@@ -12,14 +12,14 @@ kill_event = multiprocessing.Event()
 
 def generate_decryption_key(seed: int):
     """
-    Generates a 256 bit key for decryption using the LCG. This can use the LCG object and generate_key() method 
-    defined in encrypt.py however for efficiency reasons it wont be used.
-    
-    Args:
-        seed (int): The intial seeding of the LCG
+        Generates a 256 bit key for decryption using the LCG. This can use the LCG object and generate_key() method 
+        defined in encrypt.py however for efficiency reasons the LCG reccurence is done inline.
+        
+        Args:
+            seed (int): The intial seeding of the LCG
 
-    Returns:
-        bytes: Key
+        Returns:
+            bytes: Key
     """
     keys = []
     state = ((1103515245 * seed) + 12345) % 2147483648      # Call of rand
@@ -39,11 +39,14 @@ def generate_decryption_key(seed: int):
 
 def try_seed(seed, constants):
     """ 
-    Worker function. Generates a 256 bit key using seed and attempts decryption with it.
-    
-    Args:
-        seed (int): LCG initial seeding value
-        constants (dict): Dictionary containing "plaintext": bytes, "ciphertext": bytes , "nonce": bytes
+        Worker function. Generates a 256 bit key using seed and attempts decryption with it.
+
+        Args:
+            seed (int): LCG initial seeding value
+            constants (dict): Dictionary containing "plaintext": bytes, "ciphertext": bytes , "nonce": bytes
+        
+        Returns:
+            bool: True if seed decrypted ciphertext, False otherwise
 
     """
     key = generate_decryption_key(seed)
@@ -58,13 +61,13 @@ def try_seed(seed, constants):
 
 def worker(start, stop, constants, results):
     '''
-    Checks all numbers from start to stop as seeds for the LCG based key.
+        Checks all numbers from start to stop as seeds for the LCG based key.
 
-    Args:
-        start (int): The first candidate key
-        stop (int): The last candidate key (exclusive)
-        constants (dict): Dictionary containing "plaintext": bytes, "ciphertext": bytes , "nonce": bytes
-        results (list): Multiprocessing manager list where results are stored
+        Args:
+            start (int): The first candidate key
+            stop (int): The last candidate key (exclusive)
+            constants (dict): Dictionary containing "plaintext": bytes, "ciphertext": bytes , "nonce": bytes
+            results (list): Multiprocessing manager list where results are stored
     
     '''
     for i in range(start, stop):
@@ -84,13 +87,13 @@ def worker(start, stop, constants, results):
 
 def brute_force(constants, thread_count: int, max_key_length: int):
     """
-    Brute forces 32 bit LCG generated key encrypted with ChaCha20.
+        Brute forces 32 bit LCG generated key encrypted with ChaCha20.
 
-    Args:
-        constants (dict): Dictionary containing "plaintext": bytes, "ciphertext": bytes , "nonce": bytes
-        processes (int): Number of threads to create. Use CPU core count. 4 should be safe for everybody
-        max_key_length (int): The power of two representing the number of keys that will be checked. Keys = 2^max_key_length
-    
+        Args:
+            constants (dict): Dictionary containing "plaintext": bytes, "ciphertext": bytes , "nonce": bytes
+            processes (int): Number of threads to create. Use CPU core count. 4 should be safe for everybody
+            max_key_length (int): The power of two representing the number of keys that will be checked. Keys = 2^max_key_length
+        
     """
 
     stop = 2**max_key_length - 1
