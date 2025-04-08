@@ -1,5 +1,5 @@
-# Group 7 - Austin Doucette, Michelle Cheung, Dayee Lee
-# CPSC 418 - Project
+# Group 7 - Michelle Cheung
+# CPSC 418 - Explorations of Pseudo Random Number Generation
 # April 2025
 
 '''

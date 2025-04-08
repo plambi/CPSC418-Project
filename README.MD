@@ -1,15 +1,23 @@
-randomness_testsuite: https://github.com/stevenang/randomness_testsuite 
+# Explorations of PRNG
 
-# Data Generation:
-To generate test data run generate_numbers.py with 2 command line arguments: 
-- file_count (int): Number of unique triplets of data files to create.
-- dir_name (string): The name of the NEW directory in ./test_data where this data will be stored (must be unique).
+## CPSC 418 - Group 7 Final Project
 
-This will produce files with 1 million bits that will be used in testing.
+Tests the quality of pseudo random numbers using the NIST SP800-22 testing suite. Also contains a theoretical attack against encryption keys generated using weak Linear Congruential Generation. 
 
 
-# Testing the Data:
-To run the SP800-22 testing suite on files within generated above run tests.py with 1 command line argument:
-- path (string): The directory path of the directory to test. Example: "./test_data/my_data"
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
 
-This will produce a new directory within your specified directory containing the test results. Input file and result file will share the same name.
+
+## Installation
+
+## Usage
+
+#### Attack Demonstration
+The entry point to the simulation is within [Showcase](attack_demonstration/showcase.py). For control over the simulation adjust the following parameters:
+- lcg_range | This parameter controls the range of the initial seeding for the victims LCG. In theory this would always be at 31 (which represents 2^31 bits of range) but in practice it can be lower. A lower range will allow the brute forcing to find the key faster. You can keep it at 31 but this will result in ~2.5 hours of computation.
+- max_cores | Ideally this should be equal to the core count of your CPU however it can be lower. Be warned that this can eat your entire CPU.
+
+#### Randomness Testing
+

@@ -1,6 +1,20 @@
-# Group 7 - Austin Doucette, Michelle Cheung, Dayee Lee
-# CPSC 418 - Project
+# Group 7 - Austin Doucette, Michelle Cheung
+# CPSC 418 - Explorations of Pseudo Random Number Generation
 # April 2025
+
+"""
+    This script performs the SP800-22 testing suite implemented by stevenang at https://github.com/stevenang/randomness_testsuite
+
+    To run these tests do the following:
+
+        1. Generate pseudo random numbers and store them as a string of bits on one line. Store as many of these as you would like in one directory.
+            - To use our generation see generate_numbers.py
+        
+        2. Run this script and pass the directory containing the test files as an argument. 
+            - Example: py tests.py ./test_data/my_data
+
+        3. The results of each test will be saved to a new directory within the passed directory named results. The result of an input file shares a name with the input file.
+"""
 
 import sys
 import os
@@ -25,7 +39,7 @@ numpy.set_printoptions(precision=16, suppress=False) # Allows proper printing on
 
 def run_on_dir(directory):
     """
-        Runs the NIST SP800-22 testing suite provided by https://github.com/stevenang/randomness_testsuite
+        Runs the NIST SP800-22 testing suite written by https://github.com/stevenang/randomness_testsuite
 
         Args:
             directory (string): The directory to test.
@@ -37,13 +51,13 @@ def run_on_dir(directory):
     for file in os.listdir(directory):
         path = os.path.join(directory, file)
 
-        if(not os.path.isdir(path)):
+        if(os.path.isfile(path)):
             files.append(path)
 
     # Create the results directory
     results_path = directory + "/" + "results"
     try:
-        os.makedirs(f"{directory + "/" + "results"}")
+        os.makedirs(f"{directory + "/" + "results"}", exist_ok=True)
     except:
         print("Error creating directory!")
         return -1
@@ -136,4 +150,4 @@ if __name__ == "__main__":
         run_on_dir(sys.argv[1])
     except:
         print("Error! Call script with 1 argument: path")
-        print("\t path (string): The directory path of the directory to test. Example: \"./test_data/my_data\"")
+        print("\t path (string): The directory path of the directory to test. Example: ./test_data/my_data")

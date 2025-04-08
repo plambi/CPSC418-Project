@@ -1,5 +1,5 @@
-# Group 7 - Austin Doucette, Michelle Cheung, Dayee Lee
-# CPSC 418 - Project
+# Group 7 - Austin Doucette, Michelle Cheung
+# CPSC 418 - Explorations of Pseudo Random Number Generation
 # April 2025
 
 from lcg import *
@@ -14,6 +14,26 @@ import sys
 
     Currently the LCG being used in the same one used by std.lib entitled rand(). 
 
+    To run this file and generate pseudo random numbers for testing:
+        1. Ensure that this file, lcg.py, bbs.py, and seed_gen.py are within the same directory. There should also be a directory named test_data at this level.
+
+        2. Run this file with py generate_numbers.py with the following 4 command line arguments IN ORDER:
+            - File count (int): The number of unique triplets to create. Each triplet contains the following pseudo random numbers:
+                - BBS seeded with urand
+                - BBS seeded with rand
+                - BBS seeded with time
+                - LCG seeded with urand
+                - LCG seeded with rand
+                - LCG seeded with time
+            - Directory name (string): The name of the new directory in ./test_data where this data will be stored
+            - Generate BBS (bool): A flag which determines if BBS data will be generated. Either True, or False
+            - Generate LCG (bool): A flag which determines if LCG data will be generated. Either True, or False
+                - If you generate LCG data and BBS data the shared seed must adhere to the seeding constraints (see seed_gen.py)
+                - If you generate LCG without BBS data the seed used will not adhere to BBS seeding constraings (see seed_gen.py)
+
+        3. The generated pseudo random numbers will be stored within the specified directory. 
+            - Each file contains a single number of 1 million bits
+            - The LCG and BBS file which use the same seed will have the same leading number and same seed postfix
 """
 
 
