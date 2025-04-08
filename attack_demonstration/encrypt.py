@@ -1,11 +1,8 @@
-# Austin Doucette
+# Group 7 - Austin Doucette, Michelle Cheung, Dayee Lee
 # CPSC 418 - Project
-# March 2025
+# April 2025
 
 from Crypto.Cipher import ChaCha20
-import secrets  # Used to seed LCG
-
-
 
 class LCG:
     def __init__(self, multiplier: int = 1103515245, increment: int = 12345, modulus: int = 2147483648, seed: int = 0):

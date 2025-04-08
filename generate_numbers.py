@@ -1,0 +1,144 @@
+# Group 7 - Austin Doucette, Michelle Cheung, Dayee Lee
+# CPSC 418 - Project
+# April 2025
+
+from lcg import *
+from bbs import *
+from seed_gen import *
+
+import os
+import sys
+
+""" 
+    The goal of this file is to generate testing data for BBS and LCG using the same input seeds. See seed_gen.py for seed generation.
+
+    Currently the LCG being used in the same one used by std.lib entitled rand(). 
+
+"""
+
+
+def bbs_bits(bbs, seed):
+    """ Returns 1 million bits generated using blum-blum-shub. 
+    
+    Args:
+
+        seed (int): A valid BBS seed.
+
+    Returns:
+        bits (string): 1 million bits.
+    """
+
+    bbs = BBS()
+
+
+def get_data(file_count, path, gen_bbs, gen_lcg):
+    """
+        Generates test data for both BBS and LCG and saves the data at the specified path.
+
+        Args:
+            file_count (int): Controls how many times BBS and LCG generate data for each 3 types of seeds.
+            path (str): The name of the new directory contained within /test_data which stores this generated data. Example: "data_1".
+            gen_bbs (bool): True: Generate BBS numbers, False: Do not generate BBS numbers.
+            gen_lcg (bool): True: Generate LCG numbers, False: Do not generate LCG numbers.
+    
+    """
+
+    MAIN_DIR = "./test_data"
+
+    # Create the new directory
+    try:
+        os.makedirs(f"{MAIN_DIR + "/" + path}")
+    except:
+        print("Error creating directory!")
+        return -1
+
+    for iteration in range(file_count):
+        fname_template = MAIN_DIR + "/" + path + "/" + str(iteration) + "_" # ./MAIN_DIR/path/iteration_
+
+        bbs = BBS()
+        m = bbs.get_m()
+
+        # Generate valid seeds
+        if(gen_bbs):
+            s_urand = seed_bbs_urand(m)             # Use BBS seeds for both BBS and LCG
+            s_rand = seed_bbs_rand(m)
+            s_time = seed_bbs_time(m)
+        else:
+            s_urand = seed_standard_urand()        # Use less strict seeds (far faster!)
+            s_rand = seed_standard_rand()
+            s_time = seed_standard_time()
+
+        ##################################
+        #       BBS Data Generation
+        ##################################
+        if(gen_bbs):
+            # urand
+            bbs.seed(s_urand)
+            data = bbs.generate_nist_output(1_000_000)
+            fname = fname_template + "bbs_urand.txt"    # Final path = ./MAIN_DIR/path/iteration_bbs_urand.txt
+
+            with open(f"{fname}", "w") as f:
+                f.write(data)
+
+            # rand
+            bbs.seed(s_rand)
+            data = bbs.generate_nist_output(1_000_000)
+            fname = fname_template + "bbs_rand.txt"     # Final path = ./MAIN_DIR/path/iteration_bbs_rand.txt
+
+            with open(f"{fname}", "w") as f:
+                f.write(data)
+
+            # time
+            bbs.seed(s_time)
+            data = bbs.generate_nist_output(1_000_000)
+            fname = fname_template + "bbs_time.txt"     # Final path = ./MAIN_DIR/path/iteration_bbs_time.txt
+
+            with open(f"{fname}", "w") as f:
+                f.write(data)
+
+        ##################################
+        #       LCG Data Generation
+        ##################################
+        if(gen_lcg):
+            lcg = LCG()
+            
+            # urand
+            lcg.seed(s_urand)
+            data = lcg.generate_bits(1_000_000)
+            fname = fname_template + "lcg_urand.txt"    # Final path = ./MAIN_DIR/path/iteration_lcg_urand.txt
+
+            with open(f"{fname}", "w") as f:
+                f.write(data)
+
+            # rand - very redundant, it is being seeded with itself...
+            lcg.seed(s_rand)
+            data = lcg.generate_bits(1_000_000)
+            fname = fname_template + "lcg_rand.txt"    # Final path = ./MAIN_DIR/path/iteration_lcg_rand.txt 
+
+            with open(f"{fname}", "w") as f:
+                f.write(data)
+
+            # time
+            lcg.seed(s_time)
+            data = lcg.generate_bits(1_000_000)
+            fname = fname_template + "lcg_time.txt"    # Final path = ./MAIN_DIR/path/iteration_lcg_time.txt 
+
+            with open(f"{fname}", "w") as f:
+                f.write(data)
+
+
+
+if __name__ == "__main__":
+    try:
+        gen_bbs = (sys.argv[3] == "true")
+        gen_lcg = (sys.argv[4] == "true")
+
+        get_data(int(sys.argv[1]), sys.argv[2], gen_bbs, gen_lcg)
+    except Exception as e:
+        print("Error! Call script with 4 arguments: file_count, dir_name, gen_bbs, gen_lcg.")
+        print("\tfile_count (int): Number of unique triplets of data files to create.")
+        print("\tdir_name (string): The name of the NEW directory in ./test_data where this data will be stored.")
+        print("\tgen_bbs (bool): If BBS test data will be generated. Either False, or True.")
+        print("\tgen_lcg (bool): If LCG test data will be generated. Either False, or True.")
+        print(f"\n {e}")
+

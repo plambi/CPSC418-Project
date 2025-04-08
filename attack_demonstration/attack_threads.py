@@ -1,9 +1,8 @@
-# Austin Doucette
+# Group 7 - Austin Doucette, Michelle Cheung, Dayee Lee
 # CPSC 418 - Project
-# March 2025
+# April 2025
 
 import multiprocessing
-import multiprocessing.process
 from Crypto.Cipher import ChaCha20
 
 
