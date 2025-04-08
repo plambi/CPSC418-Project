@@ -1,0 +1,44 @@
+1. Frequency Test: (0.6628367295706575, True)
+2. Block Frequency Test: (1.0, True)
+3. Runs Test: (0.0, False)
+4. Longest Run of Ones: (0.022093816969570707, True)
+5. Binary Matrix Rank: (0.5390120089282318, True)
+6. Spectral Test: (2.487425074496562e-32, False)
+7. Non-overlapping Template: (1.2221790767555673e-27, False)
+8. Overlapping Template: (3.4857897945979373e-17, False)
+9. Universal Test: (9.78888729997662e-46, False)
+10. Linear Complexity: (0.003887289686718289, False)
+11. Serial Test: ((0.0, False), (1.0, True))
+12. Approximate Entropy: (0.0, False)
+13. Cumulative Sums (Forward): (0.9496451721858625, True)
+14. Cumulative Sums (Reverse): (0.5877203062604257, True)
+
+15. Random Excursions:
+	State -4: P-value = 0.07406617215520511, Pass
+	State -3: P-value = 0.0031453955737581023, Fail
+	State -2: P-value = 0.0025479947907384778, Fail
+	State -1: P-value = 0.0001636958892521123, Fail
+	State +1: P-value = 0.009267688518125074, Fail
+	State +2: P-value = 0.0519250412206357, Pass
+	State +3: P-value = 0.0184181633851484, Pass
+	State +4: P-value = 0.6239341424723109, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.008369907963428897, Fail
+	State -8.0: P-value = 0.021737307253749862, Pass
+	State -7.0: P-value = 0.07852036525766488, Pass
+	State -6.0: P-value = 0.21452610141467143, Pass
+	State -5.0: P-value = 0.21916307129273382, Pass
+	State -4.0: P-value = 0.17449013974387195, Pass
+	State -3.0: P-value = 0.12985913468334837, Pass
+	State -2.0: P-value = 0.30985841474239606, Pass
+	State -1.0: P-value = 0.8810042766032364, Pass
+	State +1.0: P-value = 0.7504056663908302, Pass
+	State +2.0: P-value = 0.51685319390547, Pass
+	State +3.0: P-value = 0.7189699400814826, Pass
+	State +4.0: P-value = 0.7556567717508231, Pass
+	State +5.0: P-value = 0.8760853752935888, Pass
+	State +6.0: P-value = 0.6680807278567569, Pass
+	State +7.0: P-value = 0.4998842882415089, Pass
+	State +8.0: P-value = 0.34365948899676957, Pass
+	State +9.0: P-value = 0.15024919594827546, Pass

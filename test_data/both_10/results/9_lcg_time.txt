@@ -1,0 +1,44 @@
+1. Frequency Test: (2.1414092599002777e-227, False)
+2. Block Frequency Test: (0.22080270452483616, True)
+3. Runs Test: (0.0, False)
+4. Longest Run of Ones: (0.5087368488564481, True)
+5. Binary Matrix Rank: (0.5942061933670054, True)
+6. Spectral Test: (0.1323325060617391, True)
+7. Non-overlapping Template: (1.1221225997487785e-19, False)
+8. Overlapping Template: (0.0053875120958641505, False)
+9. Universal Test: (0.3403434479682166, True)
+10. Linear Complexity: (0.8913851908399104, True)
+11. Serial Test: ((0.9999487454275741, True), (1.0, True))
+12. Approximate Entropy: (0.0, False)
+13. Cumulative Sums (Forward): (1.070704629949895e-227, False)
+14. Cumulative Sums (Reverse): (4.6307290990254273e-228, False)
+
+15. Random Excursions:
+	State -4: P-value = 0.8455000020986772, Pass
+	State -3: P-value = 0.1167091286887544, Pass
+	State -2: P-value = 0.8456034892890891, Pass
+	State -1: P-value = 0.9291125800824134, Pass
+	State +1: P-value = 0.12612244119041105, Pass
+	State +2: P-value = 0.5114289120342788, Pass
+	State +3: P-value = 0.8341521471767319, Pass
+	State +4: P-value = 0.4324471498391059, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.9388649898237753, Pass
+	State -8.0: P-value = 0.7854947471183542, Pass
+	State -7.0: P-value = 0.9301105081236055, Pass
+	State -6.0: P-value = 1.0, Pass
+	State -5.0: P-value = 0.9160510722818964, Pass
+	State -4.0: P-value = 0.8733822463096637, Pass
+	State -3.0: P-value = 0.6713732405408726, Pass
+	State -2.0: P-value = 0.5838824207703652, Pass
+	State -1.0: P-value = 0.7518296340458492, Pass
+	State +1.0: P-value = 0.09169028154942915, Pass
+	State +2.0: P-value = 0.07758329748513151, Pass
+	State +3.0: P-value = 0.2203297530976842, Pass
+	State +4.0: P-value = 0.38075774376508, Pass
+	State +5.0: P-value = 0.6227830688803555, Pass
+	State +6.0: P-value = 0.8737394419527438, Pass
+	State +7.0: P-value = 0.7924600886080352, Pass
+	State +8.0: P-value = 0.5136291133931241, Pass
+	State +9.0: P-value = 0.4431023319909091, Pass

@@ -1,0 +1,44 @@
+1. Frequency Test: (3.1179241834131398e-248, False)
+2. Block Frequency Test: (0.5729391549401717, True)
+3. Runs Test: (0.0, False)
+4. Longest Run of Ones: (0.0017151738734825504, False)
+5. Binary Matrix Rank: (0.6134820013631059, True)
+6. Spectral Test: (0.0010526743256329524, False)
+7. Non-overlapping Template: (1.605939298821072e-22, False)
+8. Overlapping Template: (1.3377520205428207e-05, False)
+9. Universal Test: (0.21599507741630786, True)
+10. Linear Complexity: (0.05522925929829667, True)
+11. Serial Test: ((0.9999566016943147, True), (1.0, True))
+12. Approximate Entropy: (0.0, False)
+13. Cumulative Sums (Forward): (1.1512667072769728e-248, False)
+14. Cumulative Sums (Reverse): (7.182940176238107e-249, False)
+
+15. Random Excursions:
+	State -4: P-value = 0.39364325160722774, Pass
+	State -3: P-value = 0.6682427780840681, Pass
+	State -2: P-value = 0.6060104354612004, Pass
+	State -1: P-value = 0.872984293830501, Pass
+	State +1: P-value = 0.2967958547283981, Pass
+	State +2: P-value = 0.5053529268545385, Pass
+	State +3: P-value = 0.9544405178478667, Pass
+	State +4: P-value = 0.8304305930602305, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.9234741735526215, Pass
+	State -8.0: P-value = 0.4740938620112447, Pass
+	State -7.0: P-value = 0.13809178802232058, Pass
+	State -6.0: P-value = 0.13551479452678197, Pass
+	State -5.0: P-value = 0.3908218591695082, Pass
+	State -4.0: P-value = 0.7933457924244113, Pass
+	State -3.0: P-value = 0.8943181533601761, Pass
+	State -2.0: P-value = 0.6069054272179508, Pass
+	State -1.0: P-value = 0.23476366282766925, Pass
+	State +1.0: P-value = 0.1980274426061408, Pass
+	State +2.0: P-value = 0.4235215196809612, Pass
+	State +3.0: P-value = 0.9294304154577403, Pass
+	State +4.0: P-value = 0.38937389374266185, Pass
+	State +5.0: P-value = 0.1656838389130032, Pass
+	State +6.0: P-value = 0.0121505340200949, Pass
+	State +7.0: P-value = 0.007726579761892119, Fail
+	State +8.0: P-value = 0.2103114540117994, Pass
+	State +9.0: P-value = 0.7186833074887589, Pass

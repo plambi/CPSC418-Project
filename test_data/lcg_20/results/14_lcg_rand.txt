@@ -1,0 +1,44 @@
+1. Frequency Test: (0.0, False)
+2. Block Frequency Test: (3.670386935866582e-101, False)
+3. Runs Test: (0.0, False)
+4. Longest Run of Ones: (0.5511674561968194, True)
+5. Binary Matrix Rank: (0.4505607468073784, True)
+6. Spectral Test: (0.04644477648589485, True)
+7. Non-overlapping Template: (2.872915678425398e-38, False)
+8. Overlapping Template: (0.001518805680026212, False)
+9. Universal Test: (1.344723664280151e-21, False)
+10. Linear Complexity: (0.3153745276129833, True)
+11. Serial Test: ((3.015976072305245e-226, False), (1.0, True))
+12. Approximate Entropy: (0.0, False)
+13. Cumulative Sums (Forward): (0.0, False)
+14. Cumulative Sums (Reverse): (0.0, False)
+
+15. Random Excursions:
+	State -4: P-value = 0.9595673482223938, Pass
+	State -3: P-value = 0.9564136937703737, Pass
+	State -2: P-value = 0.8935834522072044, Pass
+	State -1: P-value = 0.3765676447089763, Pass
+	State +1: P-value = 0.7512117103661213, Pass
+	State +2: P-value = 0.4204169631232847, Pass
+	State +3: P-value = 0.01859939291981647, Pass
+	State +4: P-value = 0.0002549562300168396, Fail
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.3627265064850981, Pass
+	State -8.0: P-value = 0.37109336952269756, Pass
+	State -7.0: P-value = 0.1495413545846152, Pass
+	State -6.0: P-value = 0.19169460205188826, Pass
+	State -5.0: P-value = 0.3359238131517357, Pass
+	State -4.0: P-value = 0.5126907602619235, Pass
+	State -3.0: P-value = 0.897278961260083, Pass
+	State -2.0: P-value = 0.8676323347781927, Pass
+	State -1.0: P-value = 1.0, Pass
+	State +1.0: P-value = 0.7728299926844475, Pass
+	State +2.0: P-value = 0.7388826803635272, Pass
+	State +3.0: P-value = 0.897278961260083, Pass
+	State +4.0: P-value = 0.9131160800723744, Pass
+	State +5.0: P-value = 0.8473896596867143, Pass
+	State +6.0: P-value = 0.7277235466695502, Pass
+	State +7.0: P-value = 0.6889205558044607, Pass
+	State +8.0: P-value = 0.8230632737581215, Pass
+	State +9.0: P-value = 0.8336348830246822, Pass

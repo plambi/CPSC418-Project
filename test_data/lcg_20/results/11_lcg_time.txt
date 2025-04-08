@@ -1,0 +1,44 @@
+1. Frequency Test: (0.7902392090226298, True)
+2. Block Frequency Test: (1.0, True)
+3. Runs Test: (0.0, False)
+4. Longest Run of Ones: (2.3909805882850223e-05, False)
+5. Binary Matrix Rank: (0.9440034527182601, True)
+6. Spectral Test: (2.0740675638155726e-29, False)
+7. Non-overlapping Template: (1.1463629340057018e-23, False)
+8. Overlapping Template: (1.0959814973826263e-16, False)
+9. Universal Test: (1.2948281902052775e-41, False)
+10. Linear Complexity: (0.5958144146072901, True)
+11. Serial Test: ((0.0, False), (1.0, True))
+12. Approximate Entropy: (0.0, False)
+13. Cumulative Sums (Forward): (0.8537923693474603, True)
+14. Cumulative Sums (Reverse): (0.992684431091237, True)
+
+15. Random Excursions:
+	State -4: P-value = 0.016717082472080903, Pass
+	State -3: P-value = 0.0029662006692451367, Fail
+	State -2: P-value = 0.0039226726256900366, Fail
+	State -1: P-value = 4.7664611156395903e-07, Fail
+	State +1: P-value = 0.0013137144215083938, Fail
+	State +2: P-value = 0.05681971696428809, Pass
+	State +3: P-value = 0.37826908308577956, Pass
+	State +4: P-value = 0.198444571074667, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.42570011492484794, Pass
+	State -8.0: P-value = 0.4797659883514538, Pass
+	State -7.0: P-value = 0.5951648288846791, Pass
+	State -6.0: P-value = 0.4784975290219392, Pass
+	State -5.0: P-value = 0.3260583694664857, Pass
+	State -4.0: P-value = 0.4044710124370713, Pass
+	State -3.0: P-value = 0.5646139357305326, Pass
+	State -2.0: P-value = 0.794659126482046, Pass
+	State -1.0: P-value = 0.6521389293872788, Pass
+	State +1.0: P-value = 0.8216709326716918, Pass
+	State +2.0: P-value = 0.985167877517351, Pass
+	State +3.0: P-value = 0.8121907607481903, Pass
+	State +4.0: P-value = 0.5965236154259161, Pass
+	State +5.0: P-value = 0.9315735080292133, Pass
+	State +6.0: P-value = 0.46060761685507867, Pass
+	State +7.0: P-value = 0.24930533465686966, Pass
+	State +8.0: P-value = 0.3411283400246732, Pass
+	State +9.0: P-value = 0.8482644921148526, Pass
