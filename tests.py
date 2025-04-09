@@ -18,6 +18,7 @@
 
 import sys
 import os
+
 testsuite_path = os.path.abspath("./randomness_testsuite")
 sys.path.insert(0, testsuite_path)
 

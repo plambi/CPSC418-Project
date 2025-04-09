@@ -31,27 +31,17 @@ import sys
                 - If you generate LCG data and BBS data the shared seed must adhere to the seeding constraints (see seed_gen.py)
                 - If you generate LCG without BBS data the seed used will not adhere to BBS seeding constraings (see seed_gen.py)
 
+        3. If you are using an LCG you can then choose to either use the C rand function parameters or specify your own.
+            - If you specify your own you can also choose to only use bits 32-63 instead of the whole output.
+
         3. The generated pseudo random numbers will be stored within the specified directory. 
             - Each file contains a single number of 1 million bits
             - The LCG and BBS file which use the same seed will have the same leading number and same seed postfix
 """
 
 
-def bbs_bits(bbs, seed):
-    """ Returns 1 million bits generated using blum-blum-shub. 
-    
-    Args:
 
-        seed (int): A valid BBS seed.
-
-    Returns:
-        bits (string): 1 million bits.
-    """
-
-    bbs = BBS()
-
-
-def get_data(file_count, path, gen_bbs, gen_lcg):
+def get_data(file_count, path, gen_bbs, gen_lcg, lcg_params=None, upper_lcg=False):
     """
         Generates test data for both BBS and LCG and saves the data at the specified path.
 
@@ -60,6 +50,7 @@ def get_data(file_count, path, gen_bbs, gen_lcg):
             path (str): The name of the new directory contained within /test_data which stores this generated data. Example: "data_1".
             gen_bbs (bool): True: Generate BBS numbers, False: Do not generate BBS numbers.
             gen_lcg (bool): True: Generate LCG numbers, False: Do not generate LCG numbers.
+            lcg_params (tuple): Contains (multiplier, increment, modulus) where modulus is the power of two not the literal number. Uses C rand by default.
     
     """
 
@@ -120,11 +111,17 @@ def get_data(file_count, path, gen_bbs, gen_lcg):
         #       LCG Data Generation
         ##################################
         if(gen_lcg):
-            lcg = LCG()
+            if(lcg_params == None):
+                lcg = LCG()
+            else:
+                lcg = LCG(lcg_params[0], lcg_params[1], lcg_params[2])
             
             # urand
             lcg.seed(s_urand)
-            data = lcg.generate_bits(1_000_000)
+            if(upper_lcg):
+                data = lcg.generate_bits_upper_32(1_000_000)
+            else:
+                data = lcg.generate_bits(1_000_000)
             fname = fname_template + "lcg_urand.txt"    # Final path = ./MAIN_DIR/path/iteration_lcg_urand.txt
 
             with open(f"{fname}", "w") as f:
@@ -132,7 +129,10 @@ def get_data(file_count, path, gen_bbs, gen_lcg):
 
             # rand - very redundant, it is being seeded with itself...
             lcg.seed(s_rand)
-            data = lcg.generate_bits(1_000_000)
+            if(upper_lcg):
+                data = lcg.generate_bits_upper_32(1_000_000)
+            else:
+                data = lcg.generate_bits(1_000_000)
             fname = fname_template + "lcg_rand.txt"    # Final path = ./MAIN_DIR/path/iteration_lcg_rand.txt 
 
             with open(f"{fname}", "w") as f:
@@ -140,7 +140,10 @@ def get_data(file_count, path, gen_bbs, gen_lcg):
 
             # time
             lcg.seed(s_time)
-            data = lcg.generate_bits(1_000_000)
+            if(upper_lcg):
+                data = lcg.generate_bits_upper_32(1_000_000)
+            else:
+                data = lcg.generate_bits(1_000_000)
             fname = fname_template + "lcg_time.txt"    # Final path = ./MAIN_DIR/path/iteration_lcg_time.txt 
 
             with open(f"{fname}", "w") as f:
@@ -153,12 +156,30 @@ if __name__ == "__main__":
         gen_bbs = (sys.argv[3] == "true")
         gen_lcg = (sys.argv[4] == "true")
 
-        get_data(int(sys.argv[1]), sys.argv[2], gen_bbs, gen_lcg)
+        if(gen_lcg):
+            while True:
+                try:
+                    choice = input("Use C rand paramters for LCG (yes, no)? ")
+                    if choice == "yes":
+                        lcg_params = None
+                        break
+                    if choice == "no":
+                        multipler = int(input("Provide multipler. "))
+                        increment = int(input("Provide increment. "))
+                        modulus = int(input("Provide modulus (as a power of 2, i.e. 2^input = modulus). "))
+                        lcg_params = (multipler, increment, modulus)
+                        upper_32 = (input("Use upper 32 bits only (yes, no)? ") == "yes")
+                        break
+                except:
+                    print("Error, provide valid inputs.")
+                    continue
+
+        get_data(int(sys.argv[1]), sys.argv[2], gen_bbs, gen_lcg, lcg_params, upper_32)
     except Exception as e:
         print("Error! Call script with 4 arguments: file_count, dir_name, gen_bbs, gen_lcg.")
         print("\tfile_count (int): Number of unique triplets of data files to create.")
         print("\tdir_name (string): The name of the NEW directory in ./test_data where this data will be stored.")
-        print("\tgen_bbs (bool): If BBS test data will be generated. Either False, or True.")
-        print("\tgen_lcg (bool): If LCG test data will be generated. Either False, or True.")
+        print("\tgen_bbs (bool): If BBS test data will be generated. Either false, or true.")
+        print("\tgen_lcg (bool): If LCG test data will be generated. Either false, or true.")
         print(f"\n {e}")
 

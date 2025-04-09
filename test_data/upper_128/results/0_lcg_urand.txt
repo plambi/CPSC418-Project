@@ -1,0 +1,43 @@
+1. Frequency Test: (3.97516216724908e-237, False)
+2. Block Frequency Test: (2.6672523886699572e-11, False)
+3. Runs Test: (0.0, False)
+4. Longest Run of Ones: (0.0038098478971474465, False)
+5. Binary Matrix Rank: (0.853979143612748, True)
+6. Spectral Test: (0.2788784424960479, True)
+7. Non-overlapping Template: (5.1857706352803156e-18, False)
+8. Overlapping Template: (7.6478486140426005e-19, False)
+9. Universal Test: (0.06679805505893274, True)
+10. Linear Complexity: (0.6888908496343911, True)
+11. Serial Test: ((2.5641889594979017e-08, False), (0.2734410255460952, True))
+12. Approximate Entropy: (5.7898967481342195e-74, False)
+13. Cumulative Sums (Forward): (1.3837843181517512e-237, False)
+14. Cumulative Sums (Reverse): (1.5274314696912034e-237, False)
+
+15. Random Excursions:
+	State -4: P-value = 0.968429613856723, Pass
+	State -3: P-value = 0.3565224893983877, Pass
+	State -2: P-value = 0.8576187333301479, Pass
+	State -1: P-value = 0.8661567035905395, Pass
+	State +1: P-value = 0.8661567035905395, Pass
+	State +2: P-value = 0.029794166728979974, Pass
+	State +3: P-value = 0.28618892370588506, Pass
+	State +4: P-value = 0.20709984936048717, Pass
+
+16. Random Excursions Variant:
+	State -8.0: P-value = 0.4935627897033894, Pass
+	State -7.0: P-value = 0.5562984612747348, Pass
+	State -6.0: P-value = 0.7491191330005953, Pass
+	State -5.0: P-value = 0.768278203545834, Pass
+	State -4.0: P-value = 0.5040358664525049, Pass
+	State -3.0: P-value = 0.47676672399858, Pass
+	State -2.0: P-value = 0.9187074054282889, Pass
+	State -1.0: P-value = 0.8596837951986662, Pass
+	State +1.0: P-value = 0.376759117811582, Pass
+	State +2.0: P-value = 0.35832646674888025, Pass
+	State +3.0: P-value = 0.47676672399858, Pass
+	State +4.0: P-value = 0.31623268726570697, Pass
+	State +5.0: P-value = 0.40939548620991884, Pass
+	State +6.0: P-value = 0.957492737513927, Pass
+	State +7.0: P-value = 0.5896665044931165, Pass
+	State +8.0: P-value = 0.5228166539190886, Pass
+	State +9.0: P-value = 0.520146436295395, Pass

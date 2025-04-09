@@ -3,8 +3,8 @@
 # April 2025
 
 class LCG:
-    def __init__(self,multiplier=1103515245, increment=123456, modulus=31):
-        self.state = 0
+    def __init__(self, multiplier=1103515245, increment=123456, modulus=31):
+        self.state = 1
         self.multiplier = multiplier
         self.increment = increment
         self.modulus = 2**modulus
@@ -20,6 +20,15 @@ class LCG:
         bits = ""
         while len(bits) < bitcount:
             num = self.gen()
+            bits += bin(num)[2:] # Remove '0b'
+
+        bits = bits[:bitcount]
+        return bits
+    
+    def generate_bits_upper_32(self, bitcount):
+        bits = ""
+        while len(bits) < bitcount:
+            num = (self.gen() >> 32) & 0xFFFFFFFF
             bits += bin(num)[2:] # Remove '0b'
 
         bits = bits[:bitcount]
