@@ -11,7 +11,7 @@
             - To use our generation see generate_numbers.py
         
         2. Run this script and pass the directory containing the test files as an argument. 
-            - Example: py tests.py ./test_data/my_data
+            - Example: py run_tests.py ./test_data/my_data
 
         3. The results of each test will be saved to a new directory within the passed directory named results. The result of an input file shares a name with the input file.
 """
@@ -58,7 +58,7 @@ def run_on_dir(directory):
     # Create the results directory
     results_path = directory + "/" + "results"
     try:
-        os.makedirs(f"{directory + "/" + "results"}", exist_ok=True)
+        os.makedirs(results_path, exist_ok=True)
     except:
         print("Error creating directory!")
         return -1
@@ -139,11 +139,12 @@ def run_on_dir(directory):
 
         # Write results to output file
         fname = os.path.basename(file)
-        with open(f"{results_path + "/" + fname}", "w") as rfile:
+        fpath = results_path + "/" + fname
+        with open(fpath, "w") as rfile:
             for line in results:
                 rfile.write(line)
         
-        print(f"Results of {fname} saved to {results_path + "/" + fname}.")
+        print(f"Results of {fname} saved to {fpath}.")
 
 
 if __name__ == "__main__":

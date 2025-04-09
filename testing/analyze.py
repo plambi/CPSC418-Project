@@ -82,10 +82,12 @@ def parse_directory_single(directory, postfixes, generator):
     for i in range(files_of_each_type):
         for postfix in postfixes:
             if generator == "bbs":
-                with open(f"{directory + "/" + str(i) + "_bbs_" + postfix + ".txt"}", "r") as f:
+                bbs_dir = directory + "/" + str(i) + "_bbs_" + postfix + ".txt"
+                with open(bbs_dir, "r") as f:
                     test_results.append(parse_individual_test(f.read()))
             else:
-                with open(f"{directory + "/" + str(i) + "_lcg_" + postfix + ".txt"}", "r") as f:
+                lcg_dir = directory + "/" + str(i) + "_lcg_" + postfix + ".txt"
+                with open(lcg_dir, "r") as f:
                     test_results.append(parse_individual_test(f.read()))
 
     return test_results
@@ -126,9 +128,11 @@ def parse_directory_both(directory, postfixes, lcg_only=False):
     for i in range(files_of_each_type):
         for postfix in postfixes:
             if not lcg_only:
-                with open(f"{directory + "/" + str(i) + "_bbs_" + postfix + ".txt"}", "r") as f:
+                bbs_dir = directory + "/" + str(i) + "_bbs_" + postfix + ".txt"
+                with open(bbs_dir, "r") as f:
                     bbs_test_results.append(parse_individual_test(f.read()))
-            with open(f"{directory + "/" + str(i) + "_lcg_" + postfix + ".txt"}", "r") as f:
+            lcg_dir = directory + "/" + str(i) + "_lcg_" + postfix + ".txt"
+            with open(lcg_dir, "r") as f:
                 lcg_test_results.append(parse_individual_test(f.read()))
 
     if lcg_only:

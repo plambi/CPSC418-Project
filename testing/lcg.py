@@ -25,6 +25,14 @@ class LCG:
         bits = bits[:bitcount]
         return bits
     
+    def generate_bits_lsb(self, bitcount):
+        bits = ""
+        for _ in range(bitcount):
+            bits += bin(self.gen())[2:] and 1
+            
+        bits = bits[:bitcount]
+        return bits
+    
     def generate_bits_upper_32(self, bitcount):
         bits = ""
         while len(bits) < bitcount:
