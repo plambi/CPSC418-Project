@@ -1,0 +1,44 @@
+1. Frequency Test: (0.24604880610268698, True)
+2. Block Frequency Test: (0.7257919124303911, True)
+3. Runs Test: (0.24254226721884076, True)
+4. Longest Run of Ones: (0.8730863312495766, True)
+5. Binary Matrix Rank: (0.7795517288166252, True)
+6. Spectral Test: (0.19254698374309998, True)
+7. Non-overlapping Template: (0.19049868021354333, True)
+8. Overlapping Template: (0.2204310287925577, True)
+9. Universal Test: (0.720269597378252, True)
+10. Linear Complexity: (0.5511545260266633, True)
+11. Serial Test: ((0.10159582834048941, True), (0.36510867555925264, True))
+12. Approximate Entropy: (0.6803507791934752, True)
+13. Cumulative Sums (Forward): (0.3289968347901895, True)
+14. Cumulative Sums (Reverse): (0.3768602050924584, True)
+
+15. Random Excursions:
+	State -4: P-value = 0.7896742118161011, Pass
+	State -3: P-value = 0.9749643566247203, Pass
+	State -2: P-value = 0.2350305214758832, Pass
+	State -1: P-value = 0.26023738545771585, Pass
+	State +1: P-value = 0.9788030587152149, Pass
+	State +2: P-value = 0.370219443376369, Pass
+	State +3: P-value = 0.316234045345816, Pass
+	State +4: P-value = 0.1389216170111502, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.46213860185198274, Pass
+	State -8.0: P-value = 0.3849906936849473, Pass
+	State -7.0: P-value = 0.659248998481845, Pass
+	State -6.0: P-value = 0.6718403822775673, Pass
+	State -5.0: P-value = 0.6263856863341911, Pass
+	State -4.0: P-value = 0.8013924929704912, Pass
+	State -3.0: P-value = 0.655273135880801, Pass
+	State -2.0: P-value = 0.5149970797563372, Pass
+	State -1.0: P-value = 0.9557715660593766, Pass
+	State +1.0: P-value = 0.8678566374659566, Pass
+	State +2.0: P-value = 0.41116186623326534, Pass
+	State +3.0: P-value = 0.2824714491821413, Pass
+	State +4.0: P-value = 0.37486565570491104, Pass
+	State +5.0: P-value = 0.3521098755093903, Pass
+	State +6.0: P-value = 0.4755542089225374, Pass
+	State +7.0: P-value = 0.8616067703427075, Pass
+	State +8.0: P-value = 0.8560655764627424, Pass
+	State +9.0: P-value = 0.7131230779906879, Pass

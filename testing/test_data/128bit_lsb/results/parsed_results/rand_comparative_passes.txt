@@ -1,0 +1,112 @@
+1. Frequency Test
+	BBS passed: 95.0% of the time
+	LCG passed: 90.0% of the time
+	Given BBS passed, LCG passed 85.0% of the time
+	Given BBS passed, LCG failed 10.0% of the time
+	Given LCG passed, BBS passed 85.0% of the time
+	Given LCG passed, BBS failed 5.0% of the time
+
+2. Block Frequency Test
+	BBS passed: 100.0% of the time
+	LCG passed: 100.0% of the time
+	Given BBS passed, LCG passed 100.0% of the time
+	Given BBS passed, LCG failed 0.0% of the time
+	Given LCG passed, BBS passed 100.0% of the time
+	Given LCG passed, BBS failed 0.0% of the time
+
+3. Runs Test
+	BBS passed: 100.0% of the time
+	LCG passed: 100.0% of the time
+	Given BBS passed, LCG passed 100.0% of the time
+	Given BBS passed, LCG failed 0.0% of the time
+	Given LCG passed, BBS passed 100.0% of the time
+	Given LCG passed, BBS failed 0.0% of the time
+
+4. Longest Run of Ones
+	BBS passed: 100.0% of the time
+	LCG passed: 100.0% of the time
+	Given BBS passed, LCG passed 100.0% of the time
+	Given BBS passed, LCG failed 0.0% of the time
+	Given LCG passed, BBS passed 100.0% of the time
+	Given LCG passed, BBS failed 0.0% of the time
+
+5. Binary Matrix Rank
+	BBS passed: 95.0% of the time
+	LCG passed: 100.0% of the time
+	Given BBS passed, LCG passed 95.0% of the time
+	Given BBS passed, LCG failed 0.0% of the time
+	Given LCG passed, BBS passed 95.0% of the time
+	Given LCG passed, BBS failed 5.0% of the time
+
+6. Spectral Test
+	BBS passed: 95.0% of the time
+	LCG passed: 100.0% of the time
+	Given BBS passed, LCG passed 95.0% of the time
+	Given BBS passed, LCG failed 0.0% of the time
+	Given LCG passed, BBS passed 95.0% of the time
+	Given LCG passed, BBS failed 5.0% of the time
+
+7. Non-overlapping Template
+	BBS passed: 95.0% of the time
+	LCG passed: 100.0% of the time
+	Given BBS passed, LCG passed 95.0% of the time
+	Given BBS passed, LCG failed 0.0% of the time
+	Given LCG passed, BBS passed 95.0% of the time
+	Given LCG passed, BBS failed 5.0% of the time
+
+8. Overlapping Template
+	BBS passed: 100.0% of the time
+	LCG passed: 100.0% of the time
+	Given BBS passed, LCG passed 100.0% of the time
+	Given BBS passed, LCG failed 0.0% of the time
+	Given LCG passed, BBS passed 100.0% of the time
+	Given LCG passed, BBS failed 0.0% of the time
+
+9. Universal Test
+	BBS passed: 95.0% of the time
+	LCG passed: 100.0% of the time
+	Given BBS passed, LCG passed 95.0% of the time
+	Given BBS passed, LCG failed 0.0% of the time
+	Given LCG passed, BBS passed 95.0% of the time
+	Given LCG passed, BBS failed 5.0% of the time
+
+10. Linear Complexity
+	BBS passed: 100.0% of the time
+	LCG passed: 100.0% of the time
+	Given BBS passed, LCG passed 100.0% of the time
+	Given BBS passed, LCG failed 0.0% of the time
+	Given LCG passed, BBS passed 100.0% of the time
+	Given LCG passed, BBS failed 0.0% of the time
+
+12. Approximate Entropy
+	BBS passed: 100.0% of the time
+	LCG passed: 100.0% of the time
+	Given BBS passed, LCG passed 100.0% of the time
+	Given BBS passed, LCG failed 0.0% of the time
+	Given LCG passed, BBS passed 100.0% of the time
+	Given LCG passed, BBS failed 0.0% of the time
+
+13. Cumulative Sums (Forward)
+	BBS passed: 95.0% of the time
+	LCG passed: 95.0% of the time
+	Given BBS passed, LCG passed 90.0% of the time
+	Given BBS passed, LCG failed 5.0% of the time
+	Given LCG passed, BBS passed 90.0% of the time
+	Given LCG passed, BBS failed 5.0% of the time
+
+14. Cumulative Sums (Reverse)
+	BBS passed: 95.0% of the time
+	LCG passed: 95.0% of the time
+	Given BBS passed, LCG passed 90.0% of the time
+	Given BBS passed, LCG failed 5.0% of the time
+	Given LCG passed, BBS passed 90.0% of the time
+	Given LCG passed, BBS failed 5.0% of the time
+
+11. Serial Test
+	BBS passed: 100.0% of the time
+	LCG passed: 100.0% of the time
+	Given BBS passed, LCG passed 100.0% of the time
+	Given BBS passed, LCG failed 0.0% of the time
+	Given LCG passed, BBS passed 100.0% of the time
+	Given LCG passed, BBS failed 0.0% of the time
+

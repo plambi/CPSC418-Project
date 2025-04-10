@@ -1,0 +1,44 @@
+1. Frequency Test: (9.955474672457186e-55, False)
+2. Block Frequency Test: (0.0926981627898856, True)
+3. Runs Test: (0.0, False)
+4. Longest Run of Ones: (0.22362065711139792, True)
+5. Binary Matrix Rank: (0.3478664027236933, True)
+6. Spectral Test: (0.5882173449740006, True)
+7. Non-overlapping Template: (0.008495334009239647, False)
+8. Overlapping Template: (0.011616878823996533, True)
+9. Universal Test: (0.14567222147476414, True)
+10. Linear Complexity: (0.8353372567076144, True)
+11. Serial Test: ((0.04765050983305873, True), (0.2886969973973986, True))
+12. Approximate Entropy: (4.246168098965194e-06, False)
+13. Cumulative Sums (Forward): (2.6602816109268644e-55, False)
+14. Cumulative Sums (Reverse): (2.38362643693836e-55, False)
+
+15. Random Excursions:
+	State -4: P-value = 0.681731506572824, Pass
+	State -3: P-value = 0.6810498011512142, Pass
+	State -2: P-value = 0.04220655237458978, Pass
+	State -1: P-value = 0.015729712879582164, Pass
+	State +1: P-value = 0.05605859641194184, Pass
+	State +2: P-value = 0.25017400993477357, Pass
+	State +3: P-value = 0.3672244807036612, Pass
+	State +4: P-value = 0.8459729681758956, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.509510562992169, Pass
+	State -8.0: P-value = 0.5640709604951655, Pass
+	State -7.0: P-value = 0.7876324821047835, Pass
+	State -6.0: P-value = 1.0, Pass
+	State -5.0: P-value = 0.770756305139485, Pass
+	State -4.0: P-value = 0.713535812908553, Pass
+	State -3.0: P-value = 0.8963198452359471, Pass
+	State -2.0: P-value = 0.574952871801262, Pass
+	State -1.0: P-value = 0.14513603694618146, Pass
+	State +1.0: P-value = 0.6976354404528671, Pass
+	State +2.0: P-value = 0.0925074905662893, Pass
+	State +3.0: P-value = 0.20778500205617567, Pass
+	State +4.0: P-value = 0.8256632741364502, Pass
+	State +5.0: P-value = 0.5820482565559287, Pass
+	State +6.0: P-value = 0.4122215925923467, Pass
+	State +7.0: P-value = 0.43467307457297677, Pass
+	State +8.0: P-value = 0.4670567130773564, Pass
+	State +9.0: P-value = 0.5718211618584368, Pass

@@ -56,7 +56,7 @@ def parse_directory_single(directory, postfixes, generator):
     Args:
         directory (string): Directory containing test results. Example "./test_data/a_test/results"
         postfixes (list): Contains the postfixes for files to parse. Example ["rand", "urand", "time"]
-        generator (string): Either "lcg" or "bbs". 
+        generator (string): Either "lcg" or "bbs"
 
     Returns:
         list: Contains the results of each test file stored as a dict.
@@ -76,7 +76,7 @@ def parse_directory_single(directory, postfixes, generator):
 
     test_results = []
 
-    files_of_each_type = int((file_count) / 3)      # The number of triplets of files that exist
+    files_of_each_type = int((file_count) / len(postfixes))      # The number of triplets of files that exist
 
     # Iterate over all files and capture data
     for i in range(files_of_each_type):

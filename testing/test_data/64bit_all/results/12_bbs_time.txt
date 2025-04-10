@@ -1,0 +1,44 @@
+1. Frequency Test: (0.7779435103011708, True)
+2. Block Frequency Test: (0.3129150846999439, True)
+3. Runs Test: (0.6526530747023889, True)
+4. Longest Run of Ones: (0.958562550647695, True)
+5. Binary Matrix Rank: (0.9670679652930472, True)
+6. Spectral Test: (0.052834788707308004, True)
+7. Non-overlapping Template: (0.9030978336281863, True)
+8. Overlapping Template: (0.07203429326658041, True)
+9. Universal Test: (0.5558828598448213, True)
+10. Linear Complexity: (0.3820731080366532, True)
+11. Serial Test: ((0.6809286637156287, True), (0.9043103025151767, True))
+12. Approximate Entropy: (0.3915919204331723, True)
+13. Cumulative Sums (Forward): (0.8289116873777286, True)
+14. Cumulative Sums (Reverse): (0.9053175188220901, True)
+
+15. Random Excursions:
+	State -4: P-value = 0.9659586217051002, Pass
+	State -3: P-value = 0.5194435071413392, Pass
+	State -2: P-value = 0.24956250116592915, Pass
+	State -1: P-value = 0.71686116943699, Pass
+	State +1: P-value = 0.9192995412594657, Pass
+	State +2: P-value = 0.9828691188590308, Pass
+	State +3: P-value = 0.916446222242081, Pass
+	State +4: P-value = 0.7028361131577081, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.39136276066872255, Pass
+	State -8.0: P-value = 0.3996134867394133, Pass
+	State -7.0: P-value = 0.29115743287467954, Pass
+	State -6.0: P-value = 0.3969973840982517, Pass
+	State -5.0: P-value = 0.7320981570268299, Pass
+	State -4.0: P-value = 0.59155001141151, Pass
+	State -3.0: P-value = 0.4333349160674995, Pass
+	State -2.0: P-value = 0.46388839059168396, Pass
+	State -1.0: P-value = 0.7396875416342625, Pass
+	State +1.0: P-value = 0.6504828053542464, Pass
+	State +2.0: P-value = 0.4964154368602016, Pass
+	State +3.0: P-value = 0.5254914901139899, Pass
+	State +4.0: P-value = 0.6978884782374415, Pass
+	State +5.0: P-value = 0.7020084657750003, Pass
+	State +6.0: P-value = 0.5119922042970838, Pass
+	State +7.0: P-value = 0.540822540068498, Pass
+	State +8.0: P-value = 0.7373498756007274, Pass
+	State +9.0: P-value = 0.9707797978824493, Pass

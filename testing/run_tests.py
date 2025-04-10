@@ -146,10 +146,15 @@ def run_on_dir(directory):
         
         print(f"Results of {fname} saved to {fpath}.")
 
+    print("=" * 15)
+    print(f"Finished testing {directory}")
+    print("=" * 15)
+
 
 if __name__ == "__main__":
     try:
         run_on_dir(sys.argv[1])
-    except:
+    except Exception as e:
+        print(e)
         print("Error! Call script with 1 argument: path")
         print("\t path (string): The directory path of the directory to test. Example: ./test_data/my_data")

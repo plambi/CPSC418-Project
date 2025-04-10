@@ -1,0 +1,44 @@
+1. Frequency Test: (0.726338697648762, True)
+2. Block Frequency Test: (0.8687915234298609, True)
+3. Runs Test: (0.048168625670988785, True)
+4. Longest Run of Ones: (0.724767823101367, True)
+5. Binary Matrix Rank: (0.9755434369942018, True)
+6. Spectral Test: (0.666249101901383, True)
+7. Non-overlapping Template: (0.23639482612980547, True)
+8. Overlapping Template: (0.35173120665271557, True)
+9. Universal Test: (0.5022804128101876, True)
+10. Linear Complexity: (0.5183261373398427, True)
+11. Serial Test: ((0.42168808167740046, True), (0.20575643093141863, True))
+12. Approximate Entropy: (0.037236269419696995, True)
+13. Cumulative Sums (Forward): (0.651308049463604, True)
+14. Cumulative Sums (Reverse): (0.6810924436334376, True)
+
+15. Random Excursions:
+	State -4: P-value = 0.22697507005576795, Pass
+	State -3: P-value = 0.5665349022442927, Pass
+	State -2: P-value = 0.6257853952461155, Pass
+	State -1: P-value = 0.4725638536945801, Pass
+	State +1: P-value = 0.3927798740435656, Pass
+	State +2: P-value = 0.3710263619164919, Pass
+	State +3: P-value = 0.4345140825228486, Pass
+	State +4: P-value = 0.37950045794396925, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.02892952097158934, Pass
+	State -8.0: P-value = 0.048183484388872426, Pass
+	State -7.0: P-value = 0.15513334280330504, Pass
+	State -6.0: P-value = 0.3771664844107957, Pass
+	State -5.0: P-value = 0.83564172048675, Pass
+	State -4.0: P-value = 0.6984072899059639, Pass
+	State -3.0: P-value = 0.7433101146805825, Pass
+	State -2.0: P-value = 0.7672788561504089, Pass
+	State -1.0: P-value = 0.8547485817706139, Pass
+	State +1.0: P-value = 0.42054434176615885, Pass
+	State +2.0: P-value = 0.37464382423682396, Pass
+	State +3.0: P-value = 0.9087498368060151, Pass
+	State +4.0: P-value = 0.7502725244128046, Pass
+	State +5.0: P-value = 1.0, Pass
+	State +6.0: P-value = 0.8858886062926034, Pass
+	State +7.0: P-value = 0.9514173055820975, Pass
+	State +8.0: P-value = 0.8058473855662436, Pass
+	State +9.0: P-value = 0.6506402897301007, Pass

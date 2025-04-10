@@ -27,7 +27,7 @@ def seed_bbs_urand(m):
     while True:
         seed = int.from_bytes(os.urandom(16), byteorder='big')
 
-        # Valid seeds must be coprime with n
+        # Valid seeds must be coprime with m
         if math.gcd(seed, m) == 1:
             return seed
         
@@ -40,13 +40,13 @@ def seed_bbs_rand(m):
             m (int): p * q of bbs.
     
     """
-    lcg = LCG()                             # Default parameters are that of the C rand function
-    lcg.seed(int(time.time() * 1000000))    # Current time in microseconds
+    lcg = LCG()                                 # Default parameters are that of the C rand function
+    lcg.seed(int(time.time() * 1000000))        # Current time in microseconds
 
     while True:
         seed = lcg.gen()
 
-        # Valid seeds must be coprime with n
+        # Valid seeds must be coprime with m
         if math.gcd(seed, m) == 1:
             return seed
         
@@ -61,7 +61,7 @@ def seed_bbs_time(m):
     while True:
         seed = int(time.time() * 1000000)
 
-        # Valid seeds must be coprime with n
+        # Valid seeds must be coprime with m
         if math.gcd(seed, m) == 1:
             return seed
     

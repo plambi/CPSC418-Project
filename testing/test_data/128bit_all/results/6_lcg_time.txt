@@ -1,0 +1,44 @@
+1. Frequency Test: (2.3372031201296197e-15, False)
+2. Block Frequency Test: (0.9372116531667365, True)
+3. Runs Test: (0.0, False)
+4. Longest Run of Ones: (0.5100072552420409, True)
+5. Binary Matrix Rank: (0.7377138824519238, True)
+6. Spectral Test: (0.5693893799496703, True)
+7. Non-overlapping Template: (0.04774452544126402, True)
+8. Overlapping Template: (0.5217602785500375, True)
+9. Universal Test: (0.5257032498077641, True)
+10. Linear Complexity: (0.9548898601212353, True)
+11. Serial Test: ((0.1363308960569457, True), (0.1534583524222354, True))
+12. Approximate Entropy: (0.07251445581188574, True)
+13. Cumulative Sums (Forward): (2.267541486393327e-15, False)
+14. Cumulative Sums (Reverse): (3.545838819412209e-15, False)
+
+15. Random Excursions:
+	State -4: P-value = 0.6325245476556, Pass
+	State -3: P-value = 0.863364635551933, Pass
+	State -2: P-value = 0.47958316529004186, Pass
+	State -1: P-value = 0.15374826627390434, Pass
+	State +1: P-value = 0.9625657732472964, Pass
+	State +2: P-value = 0.84883435605403, Pass
+	State +3: P-value = 0.6119477043221748, Pass
+	State +4: P-value = 0.5402729199452521, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.6608329433097226, Pass
+	State -8.0: P-value = 0.48352205986804897, Pass
+	State -7.0: P-value = 0.5724388313013127, Pass
+	State -6.0: P-value = 0.3877876816065997, Pass
+	State -5.0: P-value = 0.4662143068223953, Pass
+	State -4.0: P-value = 0.3619347669211923, Pass
+	State -3.0: P-value = 0.06870729999982267, Pass
+	State -2.0: P-value = 0.0981808126896524, Pass
+	State -1.0: P-value = 0.4975177761299888, Pass
+	State +1.0: P-value = 0.7062559621048525, Pass
+	State +2.0: P-value = 0.6321424221485427, Pass
+	State +3.0: P-value = 0.26595340931284217, Pass
+	State +4.0: P-value = 0.24276808044983822, Pass
+	State +5.0: P-value = 0.4975177761299887, Pass
+	State +6.0: P-value = 0.4670589017151735, Pass
+	State +7.0: P-value = 0.39136306312304026, Pass
+	State +8.0: P-value = 0.5462847352124822, Pass
+	State +9.0: P-value = 0.5959923306994382, Pass

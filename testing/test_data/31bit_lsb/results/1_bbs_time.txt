@@ -1,0 +1,44 @@
+1. Frequency Test: (0.44129989268529923, True)
+2. Block Frequency Test: (0.9040260088158201, True)
+3. Runs Test: (0.3156641928969649, True)
+4. Longest Run of Ones: (0.6666146558198283, True)
+5. Binary Matrix Rank: (0.648820862639754, True)
+6. Spectral Test: (0.22930989318400796, True)
+7. Non-overlapping Template: (0.1109884174758107, True)
+8. Overlapping Template: (0.8164225303006057, True)
+9. Universal Test: (0.5109082485491339, True)
+10. Linear Complexity: (0.9375528946749283, True)
+11. Serial Test: ((0.5434162438555638, True), (0.6808095955693364, True))
+12. Approximate Entropy: (0.042377014161879833, True)
+13. Cumulative Sums (Forward): (0.6137459825796427, True)
+14. Cumulative Sums (Reverse): (0.3577861654678062, True)
+
+15. Random Excursions:
+	State -4: P-value = 0.7793192401737444, Pass
+	State -3: P-value = 0.2110110213408847, Pass
+	State -2: P-value = 0.20012456002471793, Pass
+	State -1: P-value = 0.25754089031164445, Pass
+	State +1: P-value = 0.9325910847971038, Pass
+	State +2: P-value = 0.6414950764367805, Pass
+	State +3: P-value = 0.7278704729297499, Pass
+	State +4: P-value = 0.5369438649289122, Pass
+
+16. Random Excursions Variant:
+	State -9.0: P-value = 0.5330284212990296, Pass
+	State -8.0: P-value = 0.28084201086629845, Pass
+	State -7.0: P-value = 0.26058757386618403, Pass
+	State -6.0: P-value = 0.3899334405777678, Pass
+	State -5.0: P-value = 0.758157860602167, Pass
+	State -4.0: P-value = 0.6930902236949182, Pass
+	State -3.0: P-value = 0.49492274940962633, Pass
+	State -2.0: P-value = 0.9445432110434201, Pass
+	State -1.0: P-value = 1.0, Pass
+	State +1.0: P-value = 0.5739432945009848, Pass
+	State +2.0: P-value = 0.6764114467845959, Pass
+	State +3.0: P-value = 0.8999506317963876, Pass
+	State +4.0: P-value = 0.7846767790759339, Pass
+	State +5.0: P-value = 0.809581624264228, Pass
+	State +6.0: P-value = 0.84637650049997, Pass
+	State +7.0: P-value = 0.8237122142270984, Pass
+	State +8.0: P-value = 0.9009714934164413, Pass
+	State +9.0: P-value = 0.860821619587509, Pass

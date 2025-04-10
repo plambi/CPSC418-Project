@@ -1,0 +1,60 @@
+Overall
+	BBS passed: 99.33% of tests. 298/300
+	LCG passed: 54.0% of tests. 162/300
+
+1. Frequency Test
+	BBS passed: 100.0% of the time. 20/20
+	LCG passed: 0.0% of the time. 0/20
+
+2. Block Frequency Test
+	BBS passed: 100.0% of the time. 20/20
+	LCG passed: 90.0% of the time. 18/20
+
+3. Runs Test
+	BBS passed: 100.0% of the time. 20/20
+	LCG passed: 0.0% of the time. 0/20
+
+4. Longest Run of Ones
+	BBS passed: 95.0% of the time. 19/20
+	LCG passed: 95.0% of the time. 19/20
+
+5. Binary Matrix Rank
+	BBS passed: 100.0% of the time. 20/20
+	LCG passed: 100.0% of the time. 20/20
+
+6. Spectral Test
+	BBS passed: 100.0% of the time. 20/20
+	LCG passed: 100.0% of the time. 20/20
+
+7. Non-overlapping Template
+	BBS passed: 100.0% of the time. 20/20
+	LCG passed: 15.0% of the time. 3/20
+
+8. Overlapping Template
+	BBS passed: 95.0% of the time. 19/20
+	LCG passed: 20.0% of the time. 4/20
+
+9. Universal Test
+	BBS passed: 100.0% of the time. 20/20
+	LCG passed: 100.0% of the time. 20/20
+
+10. Linear Complexity
+	BBS passed: 100.0% of the time. 20/20
+	LCG passed: 100.0% of the time. 20/20
+
+11. Serial Test
+	BBS passed: 100.0% of the time. 40/40
+	LCG passed: 95.0% of the time. 38/40
+
+12. Approximate Entropy
+	BBS passed: 100.0% of the time. 20/20
+	LCG passed: 0.0% of the time. 0/20
+
+13. Cumulative Sums (Forward)
+	BBS passed: 100.0% of the time. 20/20
+	LCG passed: 0.0% of the time. 0/20
+
+14. Cumulative Sums (Reverse)
+	BBS passed: 100.0% of the time. 20/20
+	LCG passed: 0.0% of the time. 0/20
+

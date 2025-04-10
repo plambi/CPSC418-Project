@@ -41,7 +41,8 @@ import sys
 
 
 
-def get_data(file_count, path, gen_bbs, gen_lcg, lcg_params=None, special_lcg=None):
+def get_data(file_count, path, gen_bbs, gen_lcg, lcg_params=None, lsb=False):
+
     """
         Generates test data for both BBS and LCG and saves the data at the specified path.
 
@@ -51,7 +52,6 @@ def get_data(file_count, path, gen_bbs, gen_lcg, lcg_params=None, special_lcg=No
             gen_bbs (bool): True: Generate BBS numbers, False: Do not generate BBS numbers.
             gen_lcg (bool): True: Generate LCG numbers, False: Do not generate LCG numbers.
             lcg_params (tuple): Contains (multiplier, increment, modulus) where modulus is the power of two not the literal number. Uses C rand by default.
-            special_lcg (string): One of "lower_32", "lsb", or None
     
     """
 
@@ -120,9 +120,7 @@ def get_data(file_count, path, gen_bbs, gen_lcg, lcg_params=None, special_lcg=No
             
             # urand
             lcg.seed(s_urand)
-            if(lcg_params == "upper_32"):
-                data = lcg.generate_bits_upper_32(1_000_000)
-            elif(lcg_params == "lsb"):
+            if(lsb):
                 data = lcg.generate_bits_lsb(1_000_000)
             else:
                 data = lcg.generate_bits(1_000_000)
@@ -133,9 +131,7 @@ def get_data(file_count, path, gen_bbs, gen_lcg, lcg_params=None, special_lcg=No
 
             # rand - very redundant, it is being seeded with itself...
             lcg.seed(s_rand)
-            if(lcg_params == "upper_32"):
-                data = lcg.generate_bits_upper_32(1_000_000)
-            elif(lcg_params == "lsb"):
+            if(lsb):
                 data = lcg.generate_bits_lsb(1_000_000)
             else:
                 data = lcg.generate_bits(1_000_000)
@@ -146,9 +142,7 @@ def get_data(file_count, path, gen_bbs, gen_lcg, lcg_params=None, special_lcg=No
 
             # time
             lcg.seed(s_time)
-            if(lcg_params == "upper_32"):
-                data = lcg.generate_bits_upper_32(1_000_000)
-            elif(lcg_params == "lsb"):
+            if(lsb):
                 data = lcg.generate_bits_lsb(1_000_000)
             else:
                 data = lcg.generate_bits(1_000_000)
@@ -165,7 +159,6 @@ if __name__ == "__main__":
         gen_lcg = (sys.argv[4] == "true")
 
         if(gen_lcg):
-            lcg_type = None
             while True:
                 try:
                     choice = input("Use C rand paramters for LCG (yes, no)? ")
@@ -178,22 +171,15 @@ if __name__ == "__main__":
                         modulus = int(input("Provide modulus (as a power of 2, i.e. 2^input = modulus). "))
                         lcg_params = (multipler, increment, modulus)
 
-
-                    lcg_type_str = input("Which LCG generation? \n\t 1. Normal \n\t 2. Bits 32-63 \n\t 3. LSB ")
-                    if(lcg_type_str == "1"):
-                        lcg_type = None
-                    elif(lcg_type_str == "2"):
-                        lcg_type = "upper_32"
-                    else:
-                        lcg_type = "lsb"
-
+                    lsb = input("Use only LSB for LCG (yes, no)? ") == "yes"
                     break
+
                     
                 except:
                     print("Error, provide valid inputs.")
                     continue
 
-        get_data(int(sys.argv[1]), sys.argv[2], gen_bbs, gen_lcg, lcg_params, lcg_type)
+        get_data(int(sys.argv[1]), sys.argv[2], gen_bbs, gen_lcg, lcg_params, lsb)
     except Exception as e:
         print("Error! Call script with 4 arguments: file_count, dir_name, gen_bbs, gen_lcg.")
         print("\tfile_count (int): Number of unique triplets of data files to create.")

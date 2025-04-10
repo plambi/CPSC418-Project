@@ -3,11 +3,11 @@
 # April 2025
 
 class LCG:
-    def __init__(self, multiplier=1103515245, increment=123456, modulus=31):
+    def __init__(self, multiplier=1103515245, increment=12345, modulus=31):
         self.state = 1
         self.multiplier = multiplier
         self.increment = increment
-        self.modulus = 2**modulus
+        self.modulus = 2**modulus - 1
 
     def seed(self, seed):
         self.state = seed % self.modulus
@@ -18,6 +18,7 @@ class LCG:
 
     def generate_bits(self, bitcount):
         bits = ""
+
         while len(bits) < bitcount:
             num = self.gen()
             bits += bin(num)[2:] # Remove '0b'
@@ -28,7 +29,9 @@ class LCG:
     def generate_bits_lsb(self, bitcount):
         bits = ""
         for _ in range(bitcount):
-            bits += bin(self.gen())[2:] and 1
+            num = self.gen()
+            # print(f"Num: {num}, {bin(num % 2)}")
+            bits += bin(num % 2)[2:]
             
         bits = bits[:bitcount]
         return bits
