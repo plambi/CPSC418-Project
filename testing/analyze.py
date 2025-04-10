@@ -49,6 +49,7 @@ def parse_individual_test(test):
     return result
 
 
+
 def parse_directory_single(directory, postfixes, generator):
     """
     Given a directory containing either LCG or BBS test results (not both!), parse into dictionaries for easy comparison.
@@ -142,6 +143,7 @@ def parse_directory_both(directory, postfixes, lcg_only=False):
         return results
 
 
+
 def total_passes_single(test_results):
     """
         Determines the total number of passes across all tests for only 1 PRNG.
@@ -228,6 +230,7 @@ def total_passes_both(lcg_test_results, bbs_test_results):
     return (lcg_passes, bbs_passes, total_tests)
 
 
+
 def passes_single(test_results):
     """
         Determines how many times each test was passed. I.e. how many times did it pass Frequency, Block Frequency, etc...
@@ -281,6 +284,7 @@ def passes_single(test_results):
 
     final_string = "".join(lines)
     return final_string
+
 
 
 def passes_both(lcg_test_results, bbs_test_results):
@@ -352,102 +356,6 @@ def passes_both(lcg_test_results, bbs_test_results):
             
 
 
-def comparitive_passes(lcg_test_results, bbs_test_results):
-    """ 
-        Determines how often LCG and BBS agree on a result. I.e. do they both pass the same test. Both lists are alligned such that each entry in lcg uses the same seed as that entry in bbs.
-
-        Args:
-            lcg_test_results (list): List returned from parse_directory.
-            bbs_test_results (list): List returned from parse_directory.
-
-        Returns:
-            string: The results as a string.
-    
-    """
-
-    # Create a template dictionary containing all tests
-    template_dict = {}
-    for test in lcg_test_results[0]:
-        template_dict[test] = 0
-
-    # Create data dictionaries
-    bbs_pass_lcg_pass = template_dict.copy()
-    bbs_pass_lcg_fail = template_dict.copy()
-    lcg_pass_bbs_pass = template_dict.copy()
-    lcg_pass_bbs_fail = template_dict.copy()
-    bbs_pass = template_dict.copy()
-    lcg_pass = template_dict.copy()
-
-    # For each pair of results
-    for i in range(len(lcg_test_results)):
-        # For each test
-        for test in template_dict:
-            # Manually do the serial test due to it having two values
-            if test == "11. Serial Test":       
-                bbs_result = bbs_test_results[i][test][0][1]    # Let the rest of the code handle one value
-                lcg_result = lcg_test_results[i][test][0][1]
-                bbs_result_2 = bbs_test_results[i][test][1][1]  # Handle the other value manually
-                lcg_result_2 = lcg_test_results[i][test][1][1]
-
-                # Both passed
-                if bbs_result_2 and lcg_result_2:
-                    bbs_pass_lcg_pass[test] += 1
-                    lcg_pass_bbs_pass[test] += 1
-                    bbs_pass[test] += 1
-                    lcg_pass[test] += 1
-                    
-                # BBS passed, LCG failed
-                elif bbs_result_2 and not lcg_result_2:
-                    bbs_pass_lcg_fail[test] += 1
-                    bbs_pass[test] += 1
-
-                # LCG passed, BBS failed
-                elif not bbs_result_2 and lcg_result_2:
-                    lcg_pass_bbs_fail[test] += 1
-                    lcg_pass[test] += 1
-
-            # Handle other tests normally
-            else:
-                bbs_result = bbs_test_results[i][test][1]
-                lcg_result = lcg_test_results[i][test][1]
-                
-            # Both passed
-            if bbs_result and lcg_result:
-                bbs_pass_lcg_pass[test] += 1
-                lcg_pass_bbs_pass[test] += 1
-                bbs_pass[test] += 1
-                lcg_pass[test] += 1
-                
-            # BBS passed, LCG failed
-            elif bbs_result and not lcg_result:
-                bbs_pass_lcg_fail[test] += 1
-                bbs_pass[test] += 1
-
-            # LCG passed, BBS failed
-            elif not bbs_result and lcg_result:
-                lcg_pass_bbs_fail[test] += 1
-                lcg_pass[test] += 1
-
-    lines = []
-    for test in template_dict:
-        if test == "11. Serial Test":
-            total_tests = len(lcg_test_results) * 2
-        else:
-            total_tests = len(lcg_test_results)
-
-        lines.append(f"{test}\n")
-        lines.append(f"\tBBS passed: {round((bbs_pass[test] / total_tests) * 100, 2)}% of the time\n")
-        lines.append(f"\tLCG passed: {round((lcg_pass[test] / total_tests) * 100, 2)}% of the time\n")
-        lines.append(f"\tGiven BBS passed, LCG passed {round((bbs_pass_lcg_pass[test] / total_tests) * 100, 2)}% of the time\n")
-        lines.append(f"\tGiven BBS passed, LCG failed {round((bbs_pass_lcg_fail[test] / total_tests) * 100, 2)}% of the time\n")
-        lines.append(f"\tGiven LCG passed, BBS passed {round((lcg_pass_bbs_pass[test] / total_tests) * 100, 2)}% of the time\n")
-        lines.append(f"\tGiven LCG passed, BBS failed {round((lcg_pass_bbs_fail[test] / total_tests) * 100, 2)}% of the time\n\n")
-
-    final_string = "".join(lines)
-
-    return final_string
-
-
 def calculate_results_single(directory, output_file_name, postfixes, generator):
     """
         Parses all available LCG data in the directory and writes summary files within a sub directory named "parsed_results".
@@ -487,8 +395,6 @@ def calculate_results_both(directory, output_file_name, postfixes):
     # Compute and write the output data
     with open(f"{directory}/parsed_results/{output_file_name}_passes.txt", "w") as f:
         f.write(passes_both(lcg, bbs))
-    with open(f"{directory}/parsed_results/{output_file_name}_comparative_passes.txt", "w") as f:
-        f.write(comparitive_passes(lcg, bbs))
 
 if __name__ == "__main__":
     all_flag = False
