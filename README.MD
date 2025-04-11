@@ -2,7 +2,7 @@
 
 ## CPSC 418 - Group 7 Final Project
 
-Contains a simulated attack on symmetric key generation using bad PRNG and statistical testing of the Linear Congruential Generator, and the Blum-Blum Shub Geneartor using [stevenang - randomness_testsuite](https://github.com/stevenang/randomness_testsuite/tree/6a74f91dcac173052d81b26c45ee0d4e4a417d93). 
+Contains a simulated attack on symmetric key generation using bad PRNG and statistical testing of the Linear Congruential Generator, and the Blum-Blum Shub Generator using [stevenang - randomness_testsuite](https://github.com/stevenang/randomness_testsuite/tree/6a74f91dcac173052d81b26c45ee0d4e4a417d93). 
 
 
 ## Table of Contents
@@ -19,7 +19,7 @@ Contains a simulated attack on symmetric key generation using bad PRNG and stati
 #### Libraries Required:
 - PyCryptodome
 - Numpy
-- Scripy
+- SciPy
 
 ## Usage
 
