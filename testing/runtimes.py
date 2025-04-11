@@ -1,3 +1,7 @@
+# Group 7 - Austin Doucette
+# CPSC 418 - Explorations of Pseudo Random Number Generation
+# April 2025
+
 from seed_gen import *
 from generate_numbers import *
 from bbs import *
@@ -8,7 +12,11 @@ import time
 
 """
     This file contains functions used to measure the runtime of various functions across this project.
+
+    Many of the tests take quite a long time to run since seed generation requires initializing a new BBS which is computationally expensive.
 """
+
+
 
 def average_seed_generation(seeds, algorithm):
     """
@@ -49,6 +57,8 @@ def average_seed_generation(seeds, algorithm):
     
     return round((total_time / seeds) * 1000, 4)
 
+
+
 def get_bbs_seeds(number_of_seeds):
     """
         Generates and returns bbs seeds generated using urand.
@@ -66,6 +76,7 @@ def get_bbs_seeds(number_of_seeds):
         seeds.append(seed)
 
     return seeds
+
 
 
 def average_number_generation_bbs(numbers):
@@ -98,9 +109,10 @@ def average_number_generation_bbs(numbers):
     return round((total_time / numbers) * 1000, 4)
 
 
+
 def average_number_generation_lcg(seeds, algorithm):
     """
-        Gets the average time required to generate a 1 million bit string. Does not include seeding.
+        Gets the average time required to generate a 1 million bit string using LCG. Does not include seeding.
 
         Args:
             seeds (list): A list containing valid bbs seeds.
@@ -139,6 +151,8 @@ def average_number_generation_lcg(seeds, algorithm):
     
     return round((total_time / len(seeds)) * 1000, 4)
 
+
+
 def average_bbs_init(bbs_count):
     """
         Gets the average time required to initialize bbs.
@@ -164,6 +178,7 @@ def average_bbs_init(bbs_count):
         total_time += runtime
     
     return round((total_time / bbs_count) * 1000, 4)
+
 
 
 if __name__ == "__main__":

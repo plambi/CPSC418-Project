@@ -17,6 +17,9 @@ class LCG:
         return self.state
 
     def generate_bits(self, bitcount):
+        """
+            Returns a bitstring of a given length by concatenating entire LCG generated numbers together.
+        """
         bits = ""
 
         while len(bits) < bitcount:
@@ -27,20 +30,13 @@ class LCG:
         return bits
     
     def generate_bits_lsb(self, bitcount):
+        """
+            Returns a bitstring where each bit is the LSB of an LCG generated number.
+        """
         bits = ""
         for _ in range(bitcount):
             num = self.gen()
-            # print(f"Num: {num}, {bin(num % 2)}")
             bits += bin(num % 2)[2:]
             
-        bits = bits[:bitcount]
-        return bits
-    
-    def generate_bits_upper_32(self, bitcount):
-        bits = ""
-        while len(bits) < bitcount:
-            num = (self.gen() >> 32) & 0xFFFFFFFF
-            bits += bin(num)[2:] # Remove '0b'
-
         bits = bits[:bitcount]
         return bits

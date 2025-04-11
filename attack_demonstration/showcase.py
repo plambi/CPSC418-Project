@@ -51,5 +51,5 @@ def example(plaintext: str, seed_bits: int = 32, thread_count: int = None):
 if __name__ == "__main__":
     message = "Hello There"         # Any message works
     lcg_range = 24                  # The range of the intial LCG seed. Its maximum is 2^31 and that would be used in practice. But for testing faster set anything you like
-    max_cores = 4                   # The number of threads the simulation will create. Use your computers core count. I would reccommend 4 if you don't know.
-    example(message, lcg_range, max_cores)
+    thread_count = 4                # The number of threads the simulation will create. Use your computers core count. I would reccommend 4 if you don't know.
+    example(message, lcg_range, thread_count)

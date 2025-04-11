@@ -18,6 +18,7 @@
 
 import sys
 import os
+import numpy
 
 testsuite_path = os.path.abspath("./randomness_testsuite")
 sys.path.insert(0, testsuite_path)
@@ -34,9 +35,9 @@ from randomness_testsuite.ApproximateEntropy import ApproximateEntropy
 from randomness_testsuite.CumulativeSum import CumulativeSums
 from randomness_testsuite.RandomExcursions import RandomExcursions
 
-import numpy
-
 numpy.set_printoptions(precision=16, suppress=False) # Allows proper printing on windows
+
+
 
 def run_on_dir(directory):
     """
@@ -151,10 +152,11 @@ def run_on_dir(directory):
     print("=" * 15)
 
 
+
 if __name__ == "__main__":
     try:
         run_on_dir(sys.argv[1])
     except Exception as e:
-        print(e)
         print("Error! Call script with 1 argument: path")
         print("\t path (string): The directory path of the directory to test. Example: ./test_data/my_data")
+        print(f"\n {e}")

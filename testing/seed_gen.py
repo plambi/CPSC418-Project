@@ -32,6 +32,7 @@ def seed_bbs_urand(m):
             return seed
         
 
+
 def seed_bbs_rand(m):
     """ 
         Generate a seed using the C standard rand function.
@@ -50,6 +51,8 @@ def seed_bbs_rand(m):
         if math.gcd(seed, m) == 1:
             return seed
         
+
+
 def seed_bbs_time(m):
     """ 
         Generate a seed using time alone.
@@ -65,16 +68,22 @@ def seed_bbs_time(m):
         if math.gcd(seed, m) == 1:
             return seed
     
+
+
 def seed_standard_urand():
     """ Returns a 16 byte integer generated using urand. """
     seed = int.from_bytes(os.urandom(16), byteorder='big')
     return seed
+
+
 
 def seed_standard_rand():
     """ Returns the result of rand() with a seed derived from the current time. """
     lcg = LCG()                             # Default parameters are that of the C rand function
     lcg.seed(int(time.time() * 1000000))   # Current time in microseconds
     return lcg.gen()
+
+
 
 def seed_standard_time():
     """ Returns an integer representing the current time. """
