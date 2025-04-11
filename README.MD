@@ -40,7 +40,7 @@ The entry point to the simulation is within [showcase.py](attack_demonstration/s
     - gen_bbs: Boolean representing if BBS numbers will be generated, true or false.
     - gen_lcg: Boolean representing if LCG numbers will be generated, true or false.
 ###### Performing Tests [run_tests.py](testing/run_tests.py)
-- Performs all tests from [randomness_testsuite](testing/randomness_testsuite/) on every test number within the directory and stores the results into a sub directory named results.
+- Performs all tests from [randomness_testsuite](https://github.com/stevenang/randomness_testsuite/tree/6a74f91dcac173052d81b26c45ee0d4e4a417d93) on every test number within the directory and stores the results into a sub directory named results.
 - py run_tests.py <input_dir>
 ###### Analyzing Test Data [analyze.py](testing/analyze.py)
 - Analyzes test data and writes results into a sub directory called analyzed_results.
